@@ -1,3 +1,6 @@
+
+/*Pantalla Añadir Cast*/
+
 .addCast{
   display: flex;
   background-color: #433C68;
@@ -7,6 +10,29 @@
   padding: 60px 15px;
 }
 
+.contentAddCast{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+
+.btnCast{
+  color: #fff;
+  background-color: #a991d4;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+}
+
+.listCast{
+  display:flex;
+  background-color: white;
+  height: 200px;
+  width: 500px;
+  overflow-y: scroll;
+}
+
+/*Pantalla Añadir Genero*/
 .addGenre{
   display: flex;
   background-color: #433C68;
@@ -16,6 +42,20 @@
   padding: 60px 15px;
 }
 
+.contentAddGenre{
+  display: grid;
+  grid-template-columns: (1, 1fr);
+}
+
+.listGenre{
+  display:flex;
+  background-color: white;
+  height: 200px;
+  width: 500px;
+  overflow-y: scroll;
+}
+
+/*Pantalla Añadir Pelicula*/
 .addMovie{
   display: flex;
   background-color: #433C68;
@@ -25,22 +65,29 @@
   padding: 60px 15px;
 }
 
-.contentAddCast{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
-}
-
-.contentAddGenre{
-  display: grid;
-  grid-template-columns: (1, 1fr);
-}
-
 .contentAddMovie{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 20px;
   
+}
+
+.btnCancelar{
+  color: #fff;
+  background-color: red;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+}
+
+.btnConfirmar{
+  color: #fff;
+  background-color: #008542;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  margin: 20px;
 }
 
 .addMovieh1{
@@ -59,7 +106,6 @@
   width: 80px;
 }
 
-
 .divfile{
   position: relative;
   background-color: #a991d4;
@@ -67,6 +113,10 @@
   border-radius: 50px;
   top: 0px;
   left: 0px;
+}
+
+.divfile:hover{
+  background-color: #24223A;
 }
 
 .Poster{
@@ -107,75 +157,8 @@ label{
   width: 300px;
 }
 
-
-
-.btnCast{
-  color: #fff;
-  background-color: #a991d4;
-  border-radius: 15px;
-  width: 100px;
-  height: 40px;
-}
-
-.btnCancelar{
-  color: #fff;
-  background-color: red;
-  border-radius: 15px;
-  width: 100px;
-  height: 40px;
-  margin: 20px;
-}
-
-.btnConfirmar{
-  color: #fff;
-  background-color: #008542;
-  border-radius: 15px;
-  width: 100px;
-  height: 40px;
-  margin: 20px;
-}
-
-.flexbtn{
-  display: flex;
-  justify-content: right;
-}
-
-.listCast{
-  display:flex;
-  background-color: white;
-  height: 200px;
-  width: 500px;
-  overflow-y: scroll;
-}
-
-.listGenre{
-  display:flex;
-  background-color: white;
-  height: 200px;
-  width: 500px;
-  overflow-y: scroll;
-}
-
-ul{
-  height: 1000px;
-  padding: 10px;
-}
-
-header{
-  display: flex;
-  background-color: #24223A;
-  height: 100px;
-}
-
-::-webkit-scrollbar {
-  width: 14px;
-}
-
-::-webkit-scrollbar-thumb {
-  border: 4px solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  border-radius: 9999px;
-  background-color: #AAAAAA;
+.inputCal{
+  width: 60px;
 }
 
 .selectGenero{
@@ -186,12 +169,21 @@ header{
   width: 200px;
 }
 
+
+/*Header*/
+header{
+  display: flex;
+  background-color: #24223A;
+  height: 100px;
+}
+
 .Navigation{
-    display: grid;
-    grid-template-columns: 25% 25% 15% 15% 20%;
-    width:  100%;
-    height: 100px;
-    padding: 20px 15px;
+  z-index: 1;
+  display: grid;
+  grid-template-columns:5% 20% 30% 15% 20%;
+  width:  100%;
+  height: 100px;
+  padding: 20px 15px;
 }
 
 .SearchInput{
@@ -208,15 +200,148 @@ header{
   margin-left: 5px;
 }
 
+.Button:hover{
+  background-color: #a991d4;
+}
+
 .Barras{
-  background-color: #433C68;
+  background-color: #24223A;
   color: white;
   width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menus{
+  background-color: #24223A;
+  width: 300px;
+  
+}
+
+.menus button{
+  background-color: #433C68;
+  color: white;
+  border-radius: 5px;
+  margin: 10px;
+  width: 200px;
   height: 40px;
+  
+}
+
+.menus button:hover{
+  background-color: #a991d4;
+}
+
+.menus h5 {
+  color: white;
+  margin: 10px;
+}
+.menus h6 {
+  color: white;
+  margin: 10px;
+}
+
+
+.UserPic{
+  width: 100px;
+  border-radius: 20px;
+  border-color: white;
+  margin: 10px;
+  margin-left: 50px;
 }
 
 .Axolotl{
   width: 200px;
+}
+
+.flexbtn{
+  display: flex;
+  justify-content: right;
+}
+
+
+.listCast ul{
+  height: 1000px;
+  padding: 10px;
+}
+.listGenre ul{
+  height: 1000px;
+  padding: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: #AAAAAA;
+}
+
+/*Pestaña Pelicula*/
+
+.movie{
+  display: flex;
+  background-color: #433C68;
+  min-height: 100vh;
+}
+
+.contentMovie{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 60px 15px;
+}
+
+.sinopsisMovie{
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.sinopsisMovie p{
+  font-size:larger;
+  color: white;
+}
+
+.infoMovie{
+  padding: 20px;
+}
+
+.Poster{
+  width: 300px;
+  height: 400px;
+  padding: 15px;
+}
+
+h3{
+  color: white;
+}
+
+.Foto1{
+  width: 1000px;
+  padding: 10px;
+  height: 450px;
+  
+}
+
+.btnRent{
+  background-color: #a991d4;
+  color: white;
+  border-radius: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 50px;
+}
+
+.btnBuy{
+  background-color: #a991d4;
+  color: white;
+  border-radius: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 50px;
 }
 
 body {
