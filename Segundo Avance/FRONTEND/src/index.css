@@ -281,6 +281,7 @@ header{
   background-color: #AAAAAA;
 }
 
+
 /*Pestaña Pelicula*/
 
 .movie{
@@ -358,4 +359,210 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
     
+}
+
+/*DASHBOARD*/
+.dashboard{
+  display: flex;
+  background-color: #433C68;
+  min-height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 20px 20px 0 20px; /* Agrega un margen superior de 20 píxeles y un margen horizontal de 20 píxeles */
+}
+
+.grid-container img {
+  width: 100%;
+  height: auto;
+}
+
+.sidebar {
+text-align: center;
+  float: right;
+  width: 25%;
+  margin-left: 20px;
+  border: 10px solid black;
+  padding: 10px;
+}
+
+.category-list label {
+  display: block;
+  margin: 5px 0;
+}
+
+/*EDIT PROFILE*/
+.editProfile{
+  display: flex;
+  background-color: #433C68;
+  min-height: 100vh;
+}
+.container2{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+button[type="submit"] {
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #06c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0571a6;
+}
+
+
+/*ESTILOS PARA LOGIN Y REGISTER*/
+.register{
+  display: flex;
+  background-color: #433C68;
+  min-height: 100vh;
+  
+}
+
+.InputRegisterFile{ 
+  cursor: pointer;
+  border-radius: 5px;
+  height: 30px;
+  width: 50%;
+}
+
+.registroButton{
+  border-radius: 5px;
+  height: 30px;
+  width: 10%;
+}
+
+.whitecolor{
+  color: #fff;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+}
+
+.InicioSesion{
+color: #fff;
+font-family:Georgia, 'Times New Roman', Times, serif;
+align-items: center;
+
+border-radius: 6px;
+background-color:#433c68;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #009579;
+}
+.container {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 430px;
+  width: 100%;
+  background: #433c68;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.container .registration {
+  display: none;
+}
+#check:checked ~ .registration {
+  display: block;
+}
+#check:checked ~ .login {
+  display: none;
+}
+#check {
+  display: none;
+}
+.container .form {
+  padding: 2rem;
+}
+.form header {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.InputRegister{
+  height: 60px;
+  width: 45%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-right: 1.3rem;
+}
+
+.FormLogin {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+.form input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+.form a {
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover {
+  text-decoration: underline;
+}
+.button {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  color: #fff;
+  background: #a991d4;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.button:hover {
+  background:#aaaaaa;
+}
+.signup {
+  font-size: 17px;
+  text-align: center;
+}
+.signup label {
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover {
+  text-decoration: underline;
 }
