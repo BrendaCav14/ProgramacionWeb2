@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "64537429b462b05454d7aa39"
+  },
+  "usuario": "Stefy14",
+  "nombre": "Brenda",
+  "nombre2": "Stefania",
+  "apPaterno": "Cavazos",
+  "apMaterno": "Contreras",
+  "password": "$2b$10$vguQbiCrf..r/4UMJiulQeoOrXfYALDxIviKrmslIPyIsrqOQ4WYy",
+  "email": "brendacavazos14@hotmail.com",
+  "FechaNac": "14/07/1998",
+  "TipoCuenta": "Administrador",
+  "confirmar": true,
+  "token": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683190825332"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683192450910"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64537439b462b05454d7aa3c"
+  },
+  "usuario": "Jac22",
+  "nombre": "Jacobo",
+  "nombre2": "Alberto",
+  "apPaterno": "Cavazos",
+  "apMaterno": "Contreras",
+  "password": "$2b$10$vHoDjTpUwi7zezTw2dzFJeQGklrCTHRIAZRmgv23b.9S/jp3YzwMO",
+  "email": "jacobo22@hotmail.com",
+  "FechaNac": "07/12/2002",
+  "TipoCuenta": "Cliente",
+  "confirmar": false,
+  "token": "l5mvj91qgho1gvivs0am",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683190841687"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683190841687"
+    }
+  },
+  "__v": 0
+}]

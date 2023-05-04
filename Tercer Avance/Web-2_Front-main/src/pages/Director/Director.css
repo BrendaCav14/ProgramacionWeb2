@@ -1,0 +1,48 @@
+.containerGeneralDirector {
+    display: grid;
+    grid-template-columns: 0.8fr 2.2fr 0.8fr;
+    grid-template-rows: 0.3fr 1.4fr 0.4fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". Area-Formulario ."
+      ". . .";
+  }
+  
+  
+  .Area-Formulario {
+    grid-area: Area-Formulario;
+  }
+  
+  .containerDirector {
+    background-color: #695f97;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  
+  .inputLarge {
+    height: 40px;
+    width: 90%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  
+  .listCast{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 200px;
+  max-width: 100%;
+  
+  padding: 10px;
+  overflow-y: scroll;
+  border: 2px solid black;
+  
+  }

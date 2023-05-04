@@ -1,0 +1,82 @@
+.container {  display: grid;
+  grid-template-columns: 0.6fr 2.5fr 0.6fr;
+  grid-template-rows: 0.1fr 1.9fr 0.5fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". Area-Formulario ."
+    ". . .";
+}
+
+.Area-Formulario { grid-area: Area-Formulario;  text-align: center; }
+
+
+/*DE AQUI PARA ABAJO ES CODIGO DE INPUT*/
+
+.containerMovie {
+  background-color: #695f97;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+
+.inputLarge {
+  height: 40px;
+  width: 90%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.separador{
+  color: aliceblue;
+}
+
+
+
+label{
+  color: white;
+  font-size:large;
+  padding: 15px 15px;
+}
+
+.buttonA{
+  height: 40px;
+  width: 35%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  border: 1px solid #ddd;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #a991d4;
+}
+.buttonA:hover {
+  background:#aaaaaa;
+}
+
+.buttonB{
+  height: 40px;
+  width: 35%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  border: 1px solid #ddd;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: grey
+}
+.buttonB:hover {
+  background:#aaaaaa;
+}

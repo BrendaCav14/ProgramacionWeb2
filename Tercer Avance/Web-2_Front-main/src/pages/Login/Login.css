@@ -1,0 +1,69 @@
+.containerLogin {
+  display: grid;
+  grid-template-columns: 0.8fr 2.5fr 0.4fr;
+  grid-template-rows: 0.7fr 1.5fr 0.7fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". Login ."
+    ". . .";
+}
+
+.Login {
+  grid-area: Login;
+  max-width: 100vh;
+  border-radius: 10px;
+  border: 3px solid #a991d4;
+  padding: 50px;
+  background-color:#433c68;
+}
+
+.headerLogin {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 6px;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.inputLarge {
+  height: 40px;
+  width: 90%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.buttonLogin {
+  height: 50px;
+  width: 90%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  border: 1px solid #ddd;
+  color: #fff;
+  background: #a991d4;
+  cursor: pointer;
+}
+.buttonLogin:hover {
+  background:#aaaaaa;
+}
+
+.txtWhite{
+  color: #fff;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+}
+
+.buttonRegister{
+  border-radius: 5px;
+  height: 30px;
+  max-width: 100%;
+}

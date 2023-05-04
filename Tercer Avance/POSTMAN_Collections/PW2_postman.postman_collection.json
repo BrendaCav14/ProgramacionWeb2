@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "b4a83193-3066-4804-a794-dc3abc4bbf7e",
+		"name": "PW2_postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27041470"
+	},
+	"item": [
+		{
+			"name": "Registro de Usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"usuario\": \"Jac22\",\r\n  \"nombre\": \"Jacobo\",\r\n  \"nombre2\": \"Alberto\",\r\n  \"apPaterno\": \"Cavazos\",\r\n  \"apMaterno\": \"Contreras\",\r\n  \"password\": \"jac22\",\r\n  \"email\": \"jacobo22@hotmail.com\",\r\n  \"FechaNac\": \"07/12/2002\",\r\n  \"TipoCuenta\": \"Cliente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/usuarios",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticar Usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"brendacavazos14@hotmail.com\",\r\n    \"usuario\": \"Stefy14\",\r\n    \"password\": \"nuevacontra\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/usuarios/login",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirmar Usuario TOKEN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/usuarios/confirmar/ljdb0m5qnbo1gvivrgbc",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios",
+						"confirmar",
+						"ljdb0m5qnbo1gvivrgbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitar TOKEN - cambiar password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"brendacavazos14@hotmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/usuarios/restaurar-password",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios",
+						"restaurar-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar TOKEN - nuevo password",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/usuarios/restaurar-password/bnjblckon31gvj0ql3s",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios",
+						"restaurar-password",
+						"bnjblckon31gvj0ql3s"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo Password Guardar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"nuevacontra\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/usuarios/restaurar-password/bnjblckon31gvj0ql3s",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios",
+						"restaurar-password",
+						"bnjblckon31gvj0ql3s"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Perfil Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/usuarios/perfil",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"usuarios",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,13 @@
+
+//CORRER BACKEND
+
+npm run back
+
+DEPENDENCIAS
+
+-npm i express
+-npm i -D nodemon
+-npm i mongoose
+-npm i dotenv
+-npm i bcrypt
+-npm i jsonwebtoken
