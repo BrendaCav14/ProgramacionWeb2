@@ -50,4 +50,34 @@
     }
   },
   "__v": 0
+},{
+  "_id": {
+    "$oid": "64540d46808fed06ffc6d167"
+  },
+  "usuario": "brenda3",
+  "nombre": "Brenda",
+  "nombre2": "Judith",
+  "apPaterno": "Contreras",
+  "apMaterno": "Teran",
+  "password": "$2b$10$xoW.p6iZYiVLIRyO1Tker.Apn7Qvc98VyoBqQsYEpvkgJaEO0LqS.",
+  "email": "brendacontreras.teran@gmail.com",
+  "FechaNac": {
+    "$date": {
+      "$numberLong": "-18122400000"
+    }
+  },
+  "TipoCuenta": "Administrador",
+  "confirmar": true,
+  "token": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683230022242"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683230122684"
+    }
+  },
+  "__v": 0
 }]

@@ -41,7 +41,7 @@ email:{
     unique: true
 },
 FechaNac:{
-    type: String,
+    type: Date,
     require: true,
     trim: true
 },
@@ -51,14 +51,11 @@ TipoCuenta:{
     require: false,
     trim: true
 },
-//foto:{
-//    type: {
-//        data: Buffer,
-//        contentType: String
-//    },
-//    require: true,
-//    trim: true
-//},
+foto:{
+   type: String,
+   require: false,
+   trim: true
+},
 token:{
     type: String,
 },

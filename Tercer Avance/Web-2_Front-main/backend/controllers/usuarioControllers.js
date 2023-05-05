@@ -22,7 +22,7 @@ if(existeUsuario){
 
     console.log(usuarioR);
 
-    res.json(usuarioBD);
+    res.status(201).json(usuarioBD);
  }
  catch(error){
      console.log(error);
@@ -133,6 +133,7 @@ const comprobarToken = async(req,res) => {
         const error = new Error("El Token es invalido");
         return res.status(404).json({msg: error.message});
     }
+    
 };
 
 const nuevoPassword = async (req,res)=>{

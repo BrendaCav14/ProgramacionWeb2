@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "645526abe684c4f654dbec3c"
+  },
+  "nombre": "Sam",
+  "apellido": "Raimi",
+  "administrador": {
+    "$oid": "64537429b462b05454d7aa39"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683302059936"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683302059936"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645526cde684c4f654dbec3f"
+  },
+  "nombre": "Guillermo",
+  "apellido": "Del Toro",
+  "administrador": {
+    "$oid": "64537429b462b05454d7aa39"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683302093785"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683302093785"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6455282ae684c4f654dbec46"
+  },
+  "nombre": "James",
+  "apellido": "Cameron",
+  "administrador": {
+    "$oid": "64540d46808fed06ffc6d167"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683302442496"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683302442496"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64552e33edc58ade0914f46a"
+  },
+  "nombre": "Tim",
+  "apellido": "Burton",
+  "administrador": {
+    "$oid": "64540d46808fed06ffc6d167"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683303987918"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683303987918"
+    }
+  },
+  "__v": 0
+}]

@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"usuario\": \"Jac22\",\r\n  \"nombre\": \"Jacobo\",\r\n  \"nombre2\": \"Alberto\",\r\n  \"apPaterno\": \"Cavazos\",\r\n  \"apMaterno\": \"Contreras\",\r\n  \"password\": \"jac22\",\r\n  \"email\": \"jacobo22@hotmail.com\",\r\n  \"FechaNac\": \"07/12/2002\",\r\n  \"TipoCuenta\": \"Cliente\"\r\n}",
+					"raw": "{\r\n\"usuario\": \"brenda3\",\r\n  \"nombre\": \"Brenda\",\r\n  \"nombre2\": \"Judith\",\r\n  \"apPaterno\": \"Contreras\",\r\n  \"apMaterno\": \"Teran\",\r\n  \"password\": \"1234\",\r\n  \"email\": \"brendacontreras.teran@gmail.com\",\r\n  \"FechaNac\": \"06-05-1969\",\r\n  \"TipoCuenta\": \"Administrador\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,7 +39,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"brendacavazos14@hotmail.com\",\r\n    \"usuario\": \"Stefy14\",\r\n    \"password\": \"nuevacontra\"\r\n\r\n}",
+					"raw": "{\r\n    \"email\": \"brendacontreras.teran@gmail.com\",\r\n    \"usuario\": \"brenda3\",\r\n    \"password\": \"1234\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -65,14 +65,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{API_URL}}/usuarios/confirmar/ljdb0m5qnbo1gvivrgbc",
+					"raw": "{{API_URL}}/usuarios/confirmar/s9u06jlne4o1gvk57mj0",
 					"host": [
 						"{{API_URL}}"
 					],
 					"path": [
 						"usuarios",
 						"confirmar",
-						"ljdb0m5qnbo1gvivrgbc"
+						"s9u06jlne4o1gvk57mj0"
 					]
 				}
 			},
@@ -187,6 +187,474 @@
 					"path": [
 						"usuarios",
 						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Generos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Ciencia Ficcion\",\r\n    \"descripcion\": \"La acción en unas coordenadas espacio-temporales imaginarias y diferentes a las nuestras.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/generos",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"generos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Generos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/generos",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"generos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Genero ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/generos/64540bb1808fed06ffc6d161",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"generos",
+						"64540bb1808fed06ffc6d161"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Genero",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Terror\",\r\n    \"descripcion\": \"Sensaciones de pavor, terror, miedo, disgusto, repugnancia, horror, incomodidad o preocupación\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/generos/64540bb1808fed06ffc6d161",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"generos",
+						"64540bb1808fed06ffc6d161"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Genero",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/generos/64540c8e808fed06ffc6d164",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"generos",
+						"64540c8e808fed06ffc6d164"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Actores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTQwZDQ2ODA4ZmVkMDZmZmM2ZDE2NyIsImlhdCI6MTY4MzMwMjM1MCwiZXhwIjoxNjg1ODk0MzUwfQ.qO7cRQebUyzRrT-J3bIQtjg3FX-oeeinLFAK5qK98C0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Helena\",\r\n    \"apellido\": \"Bonham Carter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/actores",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"actores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Actores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/actores",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"actores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Actor ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/actores/6454668230d7e23835b85de4",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"actores",
+						"6454668230d7e23835b85de4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"J.K.\",\r\n    \"apellido\": \"Simmons\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/actores/6455267be684c4f654dbec36",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"actores",
+						"6455267be684c4f654dbec36"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/actores/645528e7e684c4f654dbec49",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"actores",
+						"645528e7e684c4f654dbec49"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Directores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTQwZDQ2ODA4ZmVkMDZmZmM2ZDE2NyIsImlhdCI6MTY4MzMwMjM1MCwiZXhwIjoxNjg1ODk0MzUwfQ.qO7cRQebUyzRrT-J3bIQtjg3FX-oeeinLFAK5qK98C0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Tim\",\r\n    \"apellido\": \"Burton\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/directores",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"directores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Directores",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/directores",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"directores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Director ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/directores/6455269ae684c4f654dbec39",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"directores",
+						"6455269ae684c4f654dbec39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Director",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"nombre\": \"Tim\",\r\n    \"apellido\": \"Burton\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/directores/6455269ae684c4f654dbec39",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"directores",
+						"6455269ae684c4f654dbec39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Director",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_AUTH}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/directores/6455269ae684c4f654dbec39",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"directores",
+						"6455269ae684c4f654dbec39"
 					]
 				}
 			},

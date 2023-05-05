@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "64540bb1808fed06ffc6d161"
+  },
+  "nombre": "Terror",
+  "descripcion": "Sensaciones de pavor, terror, miedo, disgusto, repugnancia, horror, incomodidad o preocupación",
+  "administrador": {
+    "$oid": "64537429b462b05454d7aa39"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683229617021"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683245132906"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64540e95808fed06ffc6d16e"
+  },
+  "nombre": "Drama",
+  "descripcion": "Genero en un contexto serio, con un tono y una orientación más susceptible de inspirar tristeza y compasión que risa o gracia.",
+  "administrador": {
+    "$oid": "64540d46808fed06ffc6d167"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683230357527"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683230357527"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64544fad1f6bc779b4d1ffce"
+  },
+  "nombre": "Comedia",
+  "descripcion": "Caracterizado por tramas y narraciones que evocan a la risa y que tienen un final feliz.",
+  "administrador": {
+    "$oid": "64537429b462b05454d7aa39"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683247021776"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683247021776"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6454505a1f6bc779b4d1ffd1"
+  },
+  "nombre": "Ciencia Ficcion",
+  "descripcion": "La acción en unas coordenadas espacio-temporales imaginarias y diferentes a las nuestras.",
+  "administrador": {
+    "$oid": "64537429b462b05454d7aa39"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683247194833"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683247194833"
+    }
+  },
+  "__v": 0
+}]
