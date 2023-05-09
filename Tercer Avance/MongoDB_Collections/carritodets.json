@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "64598e3abe1633259c0136f1"
+  },
+  "Precio": {
+    "$numberDecimal": "150"
+  },
+  "Importe": {
+    "$numberDecimal": "150"
+  },
+  "Pelicula": {
+    "$oid": "645967a06051796ad9b6feb0"
+  },
+  "cliente": {
+    "$oid": "6459802bc68146458dbaa6dc"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683590714350"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683590714350"
+    }
+  },
+  "__v": 0
+}]

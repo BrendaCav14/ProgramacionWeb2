@@ -1,0 +1,101 @@
+[{
+  "_id": {
+    "$oid": "64595b5cb35f0f944f2c389d"
+  },
+  "nombre": "DisneyPlus",
+  "enlace": "https://www.disneyplus.com/es-mx",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683577692654"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683577692654"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64595b86b35f0f944f2c38a0"
+  },
+  "nombre": "Netflix",
+  "enlace": "https://www.netflix.com/mx/",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683577734313"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683577734313"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64595bd4b35f0f944f2c38a3"
+  },
+  "nombre": "HBO Max",
+  "enlace": "https://www.hbomax.com/mx/es",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683577812014"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683577812014"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64595d8160cef424d26a040b"
+  },
+  "nombre": "Star Plus",
+  "enlace": "https://www.starplus.com/es-419/movies",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683578241832"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683578241832"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64595e4a60cef424d26a0413"
+  },
+  "nombre": "Amazon Prime",
+  "enlace": "https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683578442206"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683578442206"
+    }
+  },
+  "__v": 0
+}]

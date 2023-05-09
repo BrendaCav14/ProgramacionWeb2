@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6459916d9fa68d308e0e88e7"
+  },
+  "PrecioVenta": {
+    "$numberDecimal": "150"
+  },
+  "Pelicula": {
+    "$oid": "645967a06051796ad9b6feb0"
+  },
+  "cliente": {
+    "$oid": "6459802bc68146458dbaa6dc"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683591533794"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683591533794"
+    }
+  },
+  "__v": 0
+}]

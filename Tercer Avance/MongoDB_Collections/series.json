@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "titulo": "Merlina",
+  "sinopsis": "Mientras asiste a la Academia Nevermore, Merlina Addams intenta dominar su incipiente habilidad psíquica, frustrar una ola de asesinatos y resolver el misterio que involucró a sus padres 25 años atrás.",
+  "Generos": [
+    {
+      "$oid": "64596ab56051796ad9b6feb3"
+    },
+    {
+      "$oid": "64596af86051796ad9b6feb6"
+    },
+    {
+      "$oid": "64596b286051796ad9b6feb9"
+    }
+  ],
+  "Director": {
+    "$oid": "645957abccd1817b2d8abb07"
+  },
+  "Actores": [
+    {
+      "$oid": "64596c2e6051796ad9b6febc"
+    },
+    {
+      "$oid": "64596c486051796ad9b6febf"
+    },
+    {
+      "$oid": "64596c656051796ad9b6fec2"
+    },
+    {
+      "$oid": "64596c8b6051796ad9b6fec5"
+    }
+  ],
+  "Clasificacion": "PG",
+  "Calificacion": "5",
+  "Poster": "https://i0.wp.com/cuatrobastardos.com/wp-content/uploads/2022/09/Merlina-Poster.jpg?resize=603%2C892&ssl=1",
+  "Trailer": "https://www.youtube.com/watch?v=gmp7LTKnVPo",
+  "Precio_Compra": {
+    "$numberDecimal": "110"
+  },
+  "Precio_Renta": {
+    "$numberDecimal": "50"
+  },
+  "Plataformas": [
+    {
+      "$oid": "64595b86b35f0f944f2c38a0"
+    }
+  ],
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683582713969"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683582713969"
+    }
+  },
+  "__v": 0
+}]

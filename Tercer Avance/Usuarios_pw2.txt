@@ -1,0 +1,56 @@
+
+Usuario Principal//
+
+usuario:"brenda3"
+nombre:"Brenda"
+nombre2:"Judith"
+apPaterno:"Contreras"
+apMaterno:"Teran"
+password:"1234"
+email: "brendacontreras.teran@gmail.com"
+FechaNac: 1969-06-05T06:00:00.000+00:00
+TipoCuenta: "Administrador"
+confirmar: true
+token: ""
+
+
+
+
+"usuario": "Stefy14",
+  "nombre": "Brenda",
+  "nombre2": "Stefania",
+  "apPaterno": "Cavazos",
+  "apMaterno": "Contreras",
+  "password": "brenda14", 
+  "email": "brendacavazos14@hotmail.com",
+  "FechaNac": "14/07/1998",
+  "TipoCuenta": "Administrador"
+
+
+"usuario": "Jac22",
+  "nombre": "Jacobo",
+  "nombre2": "Alberto",
+  "apPaterno": "Cavazos",
+  "apMaterno": "Contreras",
+  "password": "jac22",
+  "email": "jacobo22@hotmail.com",
+  "FechaNac": "07/12/2002",
+  "TipoCuenta": "Cliente"
+
+
+
+_id: 6459802bc68146458dbaa6dc
+usuario: "miguel1"
+nombre: "Miguel"
+nombre2: "Angel"
+password: "miguel1"
+email: "miguelangel@hotmail.com"
+FechaNac: 1996-02-06
+TipoCuenta: "Cliente"
+foto: "C:\fakepath\LISTA3.jpg"
+confirmar: true
+token: ""
+createdAt: 2023-05-08T23:05:15.525+00:00
+updatedAt: 2023-05-08T23:05:33.613+00:00
+__v
+0

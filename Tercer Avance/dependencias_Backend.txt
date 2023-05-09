@@ -11,3 +11,20 @@ DEPENDENCIAS
 -npm i dotenv
 -npm i bcrypt
 -npm i jsonwebtoken
+-npm i cors
+-npm i nodemailer
+
+
+// CORRER FRONTEND
+npm start
+
+DEPENDENCIAS
+
+-npm i axios
+-npm i bootstrap
+-npm i react
+-npm i react-bootstrap
+-npm i react-dom
+-npm i react-icons
+-npm i react-router-dom
+-npm i react-scripts

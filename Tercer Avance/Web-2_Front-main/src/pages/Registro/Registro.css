@@ -39,12 +39,31 @@
     outline: none;
   }
 
+.contraseñas{
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:30px;
+}
+
+  .inputLarge2 {
+    padding: 0 15px;
+    height: 40px;
+    width: 90%;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+  
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+  }
+
   .buttonRegistrar {
     height: 50px;
     width: 90%;
     padding: 0 15px;
     font-size: 17px;
     margin-bottom: 1.3rem;
+    margin-left:30px;
     border-radius: 6px;
     letter-spacing: 1px;
     border: 1px solid #ddd;
@@ -64,6 +83,10 @@
   
   .buttonLoginBack{
     border-radius: 5px;
+    margin-left:5px;
+    border: 1px solid #ddd;
     height: 30px;
     max-width: 100%;
+    color: #ffeefd;
+    background: #938296;
   }

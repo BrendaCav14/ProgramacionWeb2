@@ -1,7 +1,26 @@
 import "./Genero.css";
+import FormGenero from "../../components/FormGenero";
+import useDashboard from "../../hooks/useDashboard";
+import ObtenerGeneros from "../../components/ObtenerGeneros";
+import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Genero() {
+
+  const params = useParams();
+  const {obtenerGeneroID, generos} = useDashboard();
+
+  
+
+  useEffect(() => {
+console.log(params);
+  }, [])
+
+
+
+
   return (
+<>
     <div className="containerGenero">
       <div className="containerGeneralGenero">
         <div className="Area-Formulario">
@@ -9,25 +28,40 @@ export default function Genero() {
           <h1 className="tituloMovie">Agregar Genero</h1>
           <hr className="separador" />
 </div>
-          <input
-            type="text"
-            placeholder="Genero de Pelicula/Serie"
-            className="inputLarge"
-          />
-          <button className="buttonA">Confirmar</button>
-          <button className="buttonB">Cancelar</button>
-          <div>
-            <label>Generos Registrados</label>
-            <div className="listCast">
-              <ul>
-                <li>Ejemplo1</li>
-                <li>Ejemplo2</li>
-                <li>Ejemplo3</li>
-              </ul>
-            </div>
-          </div>
+
+
+
+  <FormGenero />
+  <div>
+<button className="buttonB">
+  <Link className="LinkB" to="/Home">Cancelar</Link>
+</button>
+
+</div>
+<br></br>
+
+  <div className="GenerosDiv">
+    {generos.length ?
+    //  <p className="GenerosReg">Generos Registrados</p> 
+
+     generos.map(genero =>(
+
+      <ObtenerGeneros
+      key = {genero._id}
+      genero = {genero}
+
+      />
+      
+     ))
+
+     
+:      <p className="GenerosReg2">NO hay Generos Registrados</p>}
+  </div>
+
+
         </div>
       </div>
     </div>
+  </>
   );
 }

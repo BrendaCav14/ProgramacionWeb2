@@ -1,0 +1,201 @@
+[{
+  "_id": {
+    "$oid": "64597463df3c92037b7e7c85"
+  },
+  "titulo": "Los miércoles son tristes",
+  "sinopsis": "Cuando expulsan a Miércoles por orquestar una broma deliciosamente perversa, sus padres deciden enviarla a la Academia Nunca Más: el internado donde se enamoraron.",
+  "Temporada_num": 1,
+  "Capitulo_num": 1,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584099430"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584099430"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645975acdf3c92037b7e7c88"
+  },
+  "titulo": "La tristeza es solitaria",
+  "sinopsis": "El sheriff interroga a Miércoles sobre los extraños sucesos de la noche anterior. Después, Miércoles se enfrenta a una oponente de armas tomar en la competitiva Copa Poe",
+  "Temporada_num": 1,
+  "Capitulo_num": 2,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584428430"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584428430"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645975cedf3c92037b7e7c8b"
+  },
+  "titulo": "Tristemente amiga o enemiga",
+  "sinopsis": "Miércoles descubre una sociedad secreta. En el Día del Acercamiento, los marginados de Nunca Más se codean (y hacen dulces) con los normis de Jericó en Mundo Peregrino.",
+  "Temporada_num": 1,
+  "Capitulo_num": 3,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584462495"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584462495"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645975fcdf3c92037b7e7c8e"
+  },
+  "titulo": "Qué noche la de ese día",
+  "sinopsis": "Miércoles le pide a Xavier que la acompañe al baile Rave'N, lo que desata los celos de Tyler... pero Cosa se guarda un as en la manga. Entretanto, Eugene vigila la cueva.",
+  "Temporada_num": 1,
+  "Capitulo_num": 4,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584508649"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584508649"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64597623df3c92037b7e7c91"
+  },
+  "titulo": "Quien siembra vientos recoge tristeza",
+  "sinopsis": "Miércoles indaga en el pasado de su familia (y, sin querer, consigue que detengan a Gómez) durante el fin de semana de padres. Enid se siente obligada a transformarse.",
+  "Temporada_num": 1,
+  "Capitulo_num": 5,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584547684"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584547684"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64597671df3c92037b7e7c94"
+  },
+  "titulo": "Hoy por mí, mañana por mí",
+  "sinopsis": "Los amigos de Miércoles le montan una fiesta de cumpleaños sorpresa. Lo hacen con buena intención... pero ella preferiría pasarlo resolviendo los asesinatos",
+  "Temporada_num": 1,
+  "Capitulo_num": 6,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584625170"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584625170"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64597693df3c92037b7e7c97"
+  },
+  "titulo": "Qué triste que todavía no me conozcas",
+  "sinopsis": "El excéntrico tío Fétido llega de visita y cuenta su teoría sobre el monstruo. A regañadientes, Miércoles accede a quedar con Tyler en la cripta de Crackstone.",
+  "Temporada_num": 1,
+  "Capitulo_num": 7,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584659025"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584659025"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645976c4df3c92037b7e7c9a"
+  },
+  "titulo": "Una bandada de tristeza",
+  "sinopsis": "Miércoles se mete en un lío con la directora Weems, pero eso es solo el comienzo de sus problemas. Para luchar contra un mal ancestral, necesitará la ayuda de sus amigos.",
+  "Temporada_num": 1,
+  "Capitulo_num": 8,
+  "Serie": {
+    "$oid": "64596ef96051796ad9b6feda"
+  },
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683584708666"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683584708666"
+    }
+  },
+  "__v": 0
+}]

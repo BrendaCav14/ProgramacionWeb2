@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "645993349fa68d308e0e88f6"
+  },
+  "Total": {
+    "$numberDecimal": "150"
+  },
+  "VentaDet": {
+    "$oid": "6459916d9fa68d308e0e88e7"
+  },
+  "cliente": {
+    "$oid": "6459802bc68146458dbaa6dc"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683591988203"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683591988203"
+    }
+  },
+  "__v": 0
+}]

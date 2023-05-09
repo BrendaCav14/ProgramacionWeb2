@@ -16,6 +16,7 @@ const checkAuth = async (req,res,next) => {
                 "-password -confirmar -token -createdAt -updatedAt -__v"
                 );
 
+            console.log(token);
             console.log(req.usuario);
             return next();
         

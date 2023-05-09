@@ -11,11 +11,13 @@ const nuevoGenero = async (req,res)=>{
 const genero = new Genero(req.body);
 genero.administrador = req.usuario._id;
 
+
 try {
     const generoAlmacenado = await genero.save();
     res.json(generoAlmacenado);
 } catch (error) {
-    console.log(error);
+    const errorv = new Error("Nombre ya Registrado");
+    return res.status(401).json({msg: errorv.message});
     
 }
 
@@ -52,7 +54,6 @@ const editarGenero = async (req,res)=>{
         const error = new Error("Accion no Valida");
         return res.status(401).json({msg: error.message});
     }
-
 
     genero.nombre = req.body.nombre || genero.nombre;
     genero.descripcion = req.body.descripcion || genero.descripcion;

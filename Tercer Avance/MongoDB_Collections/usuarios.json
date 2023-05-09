@@ -1,65 +1,42 @@
 [{
   "_id": {
-    "$oid": "64537429b462b05454d7aa39"
+    "$oid": "6456ae843db1f6311ed312fe"
   },
-  "usuario": "Stefy14",
+  "usuario": "brenda14",
   "nombre": "Brenda",
   "nombre2": "Stefania",
-  "apPaterno": "Cavazos",
-  "apMaterno": "Contreras",
-  "password": "$2b$10$vguQbiCrf..r/4UMJiulQeoOrXfYALDxIviKrmslIPyIsrqOQ4WYy",
-  "email": "brendacavazos14@hotmail.com",
-  "FechaNac": "14/07/1998",
+  "password": "$2b$10$KW406pyOUXacWruW3NEReujayUswdZqlcr24AXEHgDYuH06dPC4MC",
+  "email": "brendacavazos14@correo.com",
+  "FechaNac": {
+    "$date": {
+      "$numberLong": "900374400000"
+    }
+  },
   "TipoCuenta": "Administrador",
+  "foto": "C:\\fakepath\\LISTA3.jpg",
   "confirmar": true,
   "token": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1683190825332"
+      "$numberLong": "1683402372886"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683192450910"
+      "$numberLong": "1683424752237"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "64537439b462b05454d7aa3c"
-  },
-  "usuario": "Jac22",
-  "nombre": "Jacobo",
-  "nombre2": "Alberto",
-  "apPaterno": "Cavazos",
-  "apMaterno": "Contreras",
-  "password": "$2b$10$vHoDjTpUwi7zezTw2dzFJeQGklrCTHRIAZRmgv23b.9S/jp3YzwMO",
-  "email": "jacobo22@hotmail.com",
-  "FechaNac": "07/12/2002",
-  "TipoCuenta": "Cliente",
-  "confirmar": false,
-  "token": "l5mvj91qgho1gvivs0am",
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683190841687"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683190841687"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64540d46808fed06ffc6d167"
+    "$oid": "6456fe6e377833d4a5c01137"
   },
   "usuario": "brenda3",
   "nombre": "Brenda",
   "nombre2": "Judith",
   "apPaterno": "Contreras",
   "apMaterno": "Teran",
-  "password": "$2b$10$xoW.p6iZYiVLIRyO1Tker.Apn7Qvc98VyoBqQsYEpvkgJaEO0LqS.",
+  "password": "$2b$10$IvUbXAhfzjDoWZTzGJ1.n.EQmgPRxFsgnBoyr6Npp5ggrfZJc12HW",
   "email": "brendacontreras.teran@gmail.com",
   "FechaNac": {
     "$date": {
@@ -71,12 +48,41 @@
   "token": "",
   "createdAt": {
     "$date": {
-      "$numberLong": "1683230022242"
+      "$numberLong": "1683422830637"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683230122684"
+      "$numberLong": "1683422853198"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6459802bc68146458dbaa6dc"
+  },
+  "usuario": "miguel1",
+  "nombre": "Miguel",
+  "nombre2": "Angel",
+  "password": "$2b$10$K8YVDixCoKoM7vqLXCI3BeUQXzsCtb2Ac5BSafQv6diajK6LCrKVi",
+  "email": "miguelangel@hotmail.com",
+  "FechaNac": {
+    "$date": {
+      "$numberLong": "823564800000"
+    }
+  },
+  "TipoCuenta": "Cliente",
+  "foto": "C:\\fakepath\\LISTA3.jpg",
+  "confirmar": true,
+  "token": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683587115525"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683587133613"
     }
   },
   "__v": 0

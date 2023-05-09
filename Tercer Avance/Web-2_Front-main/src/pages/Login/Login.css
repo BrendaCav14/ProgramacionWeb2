@@ -1,5 +1,6 @@
 .containerLogin {
   display: grid;
+  margin-top:-150px;
   grid-template-columns: 0.8fr 2.5fr 0.4fr;
   grid-template-rows: 0.7fr 1.5fr 0.7fr;
   gap: 0px 0px;
@@ -34,6 +35,7 @@
   padding: 0 15px;
   font-size: 17px;
   margin-bottom: 1.3rem;
+  margin-left: 30px;
   border: 1px solid #ddd;
   border-radius: 6px;
   outline: none;
@@ -42,18 +44,21 @@
 .buttonLogin {
   height: 50px;
   width: 90%;
+  font-weight: bolder;
   padding: 0 15px;
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 1.3rem;
+  margin-left:30px;
   border-radius: 6px;
   letter-spacing: 1px;
   border: 1px solid #ddd;
-  color: #fff;
-  background: #a991d4;
+  color: #e4bdde;
+  background: #aaaa;
   cursor: pointer;
 }
 .buttonLogin:hover {
-  background:#aaaaaa;
+  background:#e0bae7;
+  transition:colors;
 }
 
 .txtWhite{
@@ -62,8 +67,29 @@
   align-items: center;
 }
 
+.txtWhite2{
+  color: #fff;
+  margin-left:120px;
+  margin-top:100px;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  align-items: center;
+}
+
+
 .buttonRegister{
-  border-radius: 5px;
+  border-radius: 6px;
   height: 30px;
+  width: 30%;
+  margin-left:20px;
   max-width: 100%;
+  font-weight: bolder;
+  color: #8e1dff;
+  background: #888888;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+.buttonRegister:hover {
+  background:#d1cfd1;
 }

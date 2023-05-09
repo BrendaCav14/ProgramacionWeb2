@@ -48,7 +48,7 @@ FechaNac:{
 TipoCuenta:{
     type: String,
     enum: ['Administrador', 'Cliente'],
-    require: false,
+    require: true,
     trim: true
 },
 foto:{

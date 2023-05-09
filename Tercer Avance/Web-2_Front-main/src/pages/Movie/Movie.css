@@ -77,6 +77,26 @@ label{
   margin-right: 10px;
   background-color: grey
 }
+
 .buttonB:hover {
   background:#aaaaaa;
+}
+
+.buttonC{
+  height: 40px;
+  width: 35%;
+  padding: 0 15px;
+  font-size: 17px;
+  margin-bottom: 1.3rem;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  border: 1px solid #ddd;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: rgb(99, 25, 80)
+}
+
+.buttonC:hover {
+  background:#c2619a;
 }

@@ -1,6 +1,11 @@
 import "./Actor.css";
 
+
+
 export default function Actor() {
+
+
+
   return (
     <div className="containerActor">
       <div className="containerGeneralActor">

@@ -1,8 +1,10 @@
 import "./Director.css";
 
-export default function Director() {
+import React from 'react'
+
+const Director = () => {
   return (
-    <div className="containerDirector">
+<div className="containerDirector">
       <div className="containerGeneralDirector">
         <div className="Area-Formulario">
           <div className="container2">
@@ -31,5 +33,7 @@ export default function Director() {
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+export default Director

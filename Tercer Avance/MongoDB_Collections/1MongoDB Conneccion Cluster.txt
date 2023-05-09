@@ -1,0 +1,15 @@
+//// MONGO COMPASS BASE DE DATOS
+
+
+
+
+nombre: PrograWeb2_Backend
+
+URL: mongodb+srv://root:root123@cluster0.vv8onno.mongodb.net/test
+
+
+
+
+//////////////////////////////////////////////////
+
+backend/.env  **

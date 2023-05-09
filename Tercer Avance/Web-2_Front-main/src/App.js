@@ -2,36 +2,72 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 
 //? IMPORTACION DE PAGINAS ?//
-import Actor from "./pages/Actor";
-import Dashboard from "./pages/Dashboard";
-import Director from "./pages/Director";
-import Genero from "./pages/Genero";
-import Movie from "./pages/Movie"
-import Profile from "./pages/Profile";
-import Error404 from "./components/Error404/Error";
-import Login from "./pages/Login/Login";
-import Registro from "./pages/Registro/Registro";
+import AuthLayout from "./layout/AuthLayout.js";
+import RutaProtegida from "./layout/RutaProtegida.js";
+import Actor from "./pages/Actor/Actor.js";
+import OlvidePassword from "./pages/OlvidePassword/OlvidePassword.js";
+import NuevoPassword from "./pages/OlvidePassword/NuevoPassword.js";
+import CuentaConfirmada from "./pages/ConfirmarCuenta/ConfirmarCuenta.js";
+import Dashboard from "./pages/Dashboard/Dashboard.js";
+import Director from "./pages/Director/Director.js";
+import Genero from "./pages/Genero/Genero.js";
+import EditarGenero from "./pages/Genero/EditarGenero.js";
+import Movie from "./pages/Movie/Movie.js";
+import Profile from "./pages/Profile/Profile.js";
+import Error404 from "./components/Error404/Error.js";
+import Login from "./pages/Login/Login.js";
+import Registro from "./pages/Registro/Registro.js";
+
+import {AuthProvider} from './context/AuthProvider.js';
+import { DashboardProvider } from "./context/DashboardProvider.js";
 
 //? IMPORTACION DE COMPONENTES ?//
 import Navbar from "./components/Navbar/Navbar";
 
 
+
 function App() {
   return (
       <BrowserRouter>
-        <Navbar/>
+      <AuthProvider>
+       <DashboardProvider>
+        
         <Routes>
-        <Route path="/" element={<Login/>} />
-          <Route path="/Home" element={<Dashboard/>} />
-          <Route path="/Actor" element={<Actor/>} />
-          <Route path="/Director" element={<Director/>} />
-          <Route path="/Genero" element={<Genero/>} />
-          <Route path="/Movie" element={<Movie/>} />
-          <Route path="/Profile" element={<Profile/>} />
+      {/* RUTAS PUBLICAS */}
+<Route path= "/" element = {<AuthLayout />}>
+  <Route index element={<Login/>} />
+  <Route path="/Registro" element={<Registro/>} />
+  <Route path="/Olvide-password" element={<OlvidePassword/>} />
+  <Route path="/Olvide-password/:token" element={<NuevoPassword/>} />
+  <Route path="/confirmar/:id" element={<CuentaConfirmada/>} />
 
-          <Route path="/Registro" element={<Registro/>} />
-          <Route path="*" element={<Error404/>} />
+
+</Route>  
+
+{/* RUTAS PRIVADAS DEL USUARIO AUTENTICADO*/}
+
+<Route path="/Home" element={<RutaProtegida/>}>
+  <Route index element={<Dashboard/>} /> 
+
+  <Route path="Genero" element={<Genero/>} />
+  <Route path="Genero/:id" element={<EditarGenero/>} />
+
+  <Route path="Actor" element={<Actor/>} />
+
+  <Route path="Director" element={<Director/>} />
+
+  <Route path="Movie" element={<Movie/>} />
+
+  <Route path="Profile" element={<Profile/>} />
+
+  
+  <Route path="*" element={<Error404/>} />
+
+  </Route>
         </Routes>
+        </DashboardProvider>
+        </AuthProvider>
+      
       </BrowserRouter>
   );
 }

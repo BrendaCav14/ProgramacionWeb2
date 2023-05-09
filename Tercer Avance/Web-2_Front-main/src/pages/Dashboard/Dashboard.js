@@ -1,8 +1,15 @@
 import "./Dashboard.css";
+import useDashboard from "../../hooks/useDashboard";
 
-export default function Dashboard(){
-    return (
-        <div className="dashboard">
+export default function Dashboard () {
+
+const {general} = useDashboard();
+
+console.log(general);
+
+  return (
+  
+      <div className="dashboard">
           <div className="grid-container">
             <img src="https://via.placeholder.com/400x400" alt="imagen 1" />
             <img src="https://via.placeholder.com/400x400" alt="imagen 2" />
@@ -26,5 +33,8 @@ export default function Dashboard(){
         </div>
       </div>
         </div>
-      );
+    
+  )
 }
+
+

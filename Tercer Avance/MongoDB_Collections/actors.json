@@ -1,180 +1,160 @@
 [{
   "_id": {
-    "$oid": "6455254814565bf1a1ce6106"
-  },
-  "nombre": "Tobey",
-  "apellido": "Maguire",
-  "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683301704142"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683301704142"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552601e684c4f654dbec2d"
-  },
-  "nombre": "William",
-  "apellido": "Dafoe",
-  "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683301889502"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683301889502"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552633e684c4f654dbec30"
-  },
-  "nombre": "Kirsten",
-  "apellido": "Dunts",
-  "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683301939206"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683301939206"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552641e684c4f654dbec33"
-  },
-  "nombre": "James",
-  "apellido": "Franco",
-  "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683301953181"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683301953181"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "6455267be684c4f654dbec36"
-  },
-  "nombre": "J.K.",
-  "apellido": "Simmons",
-  "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683302011744"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683304056314"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552a82e684c4f654dbec63"
-  },
-  "nombre": "Johnny",
-  "apellido": "Depp",
-  "administrador": {
-    "$oid": "64540d46808fed06ffc6d167"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683303042706"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683303042706"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552aabe684c4f654dbec66"
-  },
-  "nombre": "Mia",
-  "apellido": "Wasikowska",
-  "administrador": {
-    "$oid": "64540d46808fed06ffc6d167"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683303083720"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683303083720"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552b02e684c4f654dbec69"
-  },
-  "nombre": "Anne",
-  "apellido": "Hathaway",
-  "administrador": {
-    "$oid": "64540d46808fed06ffc6d167"
-  },
-  "createdAt": {
-    "$date": {
-      "$numberLong": "1683303170558"
-    }
-  },
-  "updatedAt": {
-    "$date": {
-      "$numberLong": "1683303170558"
-    }
-  },
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "64552b1fe684c4f654dbec6c"
+    "$oid": "64595760ccd1817b2d8abb01"
   },
   "nombre": "Helena",
   "apellido": "Bonham Carter",
   "administrador": {
-    "$oid": "64540d46808fed06ffc6d167"
+    "$oid": "6456fe6e377833d4a5c01137"
   },
   "createdAt": {
     "$date": {
-      "$numberLong": "1683303199199"
+      "$numberLong": "1683576672684"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683303199199"
+      "$numberLong": "1683576672684"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6459577cccd1817b2d8abb04"
+  },
+  "nombre": "Johnny",
+  "apellido": "Depp",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683576700651"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683576700651"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645957ecccd1817b2d8abb0a"
+  },
+  "nombre": "Anne",
+  "apellido": "Hathaway",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683576812262"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683576812262"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645963356051796ad9b6fe9d"
+  },
+  "nombre": "Mia",
+  "apellido": "Wasikowska",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683579701482"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683579701482"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596c2e6051796ad9b6febc"
+  },
+  "nombre": "Jenna",
+  "apellido": "Ortega",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683581998844"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683581998844"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596c486051796ad9b6febf"
+  },
+  "nombre": "Emma",
+  "apellido": "Myers",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683582024052"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683582024052"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596c656051796ad9b6fec2"
+  },
+  "nombre": "Luis",
+  "apellido": "Guzman",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683582053151"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683582053151"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596c8b6051796ad9b6fec5"
+  },
+  "nombre": "Catherine",
+  "apellido": "Jones",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683582091479"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683582091479"
     }
   },
   "__v": 0

@@ -11,6 +11,7 @@ const nuevoActor = async (req,res)=>{
 const actor = new Actor(req.body);
 actor.administrador = req.usuario._id;
 
+
 try {
     const actorAlmacenado = await actor.save();
     res.json(actorAlmacenado);

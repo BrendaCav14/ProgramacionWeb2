@@ -1,0 +1,30 @@
+.containerConfirmar{
+    margin-left:300px;
+    margin-top:100px;
+}
+.headerConfirmar {
+    color: #fff;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border-radius: 6px;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+
+
+  .linkbutton{
+    height: 50px;
+    width: 90%;
+    font-weight: bolder;
+    padding: 0 18px;
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+    margin-left:150px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    color: #e4bdde;
+    background: #aaaa;
+    cursor: pointer;
+  }

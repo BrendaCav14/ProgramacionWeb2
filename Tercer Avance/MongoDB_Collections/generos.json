@@ -1,80 +1,140 @@
 [{
   "_id": {
-    "$oid": "64540bb1808fed06ffc6d161"
+    "$oid": "6458a35507fd6a95483b52b5"
   },
-  "nombre": "Terror",
-  "descripcion": "Sensaciones de pavor, terror, miedo, disgusto, repugnancia, horror, incomodidad o preocupación",
+  "nombre": "Accion",
+  "descripcion": "En este género prevalecen altas dosis de adrenalina con una buena carga de movimiento, fugas, acrobacias, peleas, guerras, persecuciones y una lucha contra el mal.",
   "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
+    "$oid": "6456fe6e377833d4a5c01137"
   },
   "createdAt": {
     "$date": {
-      "$numberLong": "1683229617021"
+      "$numberLong": "1683530581811"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683245132906"
+      "$numberLong": "1683530581811"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "64540e95808fed06ffc6d16e"
+    "$oid": "6458a37d07fd6a95483b52b8"
   },
-  "nombre": "Drama",
-  "descripcion": "Genero en un contexto serio, con un tono y una orientación más susceptible de inspirar tristeza y compasión que risa o gracia.",
+  "nombre": "Aventura",
+  "descripcion": "Similares a las de acción, predominan las nuevas experiencias y situaciones",
   "administrador": {
-    "$oid": "64540d46808fed06ffc6d167"
+    "$oid": "6456fe6e377833d4a5c01137"
   },
   "createdAt": {
     "$date": {
-      "$numberLong": "1683230357527"
+      "$numberLong": "1683530621009"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683230357527"
+      "$numberLong": "1683579335790"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "64544fad1f6bc779b4d1ffce"
+    "$oid": "6458ae0107fd6a95483b52d6"
   },
   "nombre": "Comedia",
-  "descripcion": "Caracterizado por tramas y narraciones que evocan a la risa y que tienen un final feliz.",
+  "descripcion": "Diseñadas específicamente para provocar la risa o la alegría entre los espectadores.\nNo- Ficción / documental. Este género analiza un hecho o situación real sin ficcionarlo.",
   "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
+    "$oid": "6456ae843db1f6311ed312fe"
   },
   "createdAt": {
     "$date": {
-      "$numberLong": "1683247021776"
+      "$numberLong": "1683533313791"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683247021776"
+      "$numberLong": "1683533313791"
     }
   },
   "__v": 0
 },{
   "_id": {
-    "$oid": "6454505a1f6bc779b4d1ffd1"
+    "$oid": "645961426051796ad9b6fe94"
   },
-  "nombre": "Ciencia Ficcion",
-  "descripcion": "La acción en unas coordenadas espacio-temporales imaginarias y diferentes a las nuestras.",
+  "nombre": "Fantasia",
+  "descripcion": "En ellas se incluyen personajes irreales o totalmente inventados, inexistentes en nuestra realidad. También podemos conocer este género de cine como “fantástico”. No se basa en ideas que puedan llegar a materializarse.",
   "administrador": {
-    "$oid": "64537429b462b05454d7aa39"
+    "$oid": "6456fe6e377833d4a5c01137"
   },
   "createdAt": {
     "$date": {
-      "$numberLong": "1683247194833"
+      "$numberLong": "1683579202301"
     }
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1683247194833"
+      "$numberLong": "1683579396724"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596ab56051796ad9b6feb3"
+  },
+  "nombre": "Misterio",
+  "descripcion": "Se centra en los esfuerzos del detective, investigador privado o detective aficionado para resolver las misteriosas circunstancias de un problema por medio de pistas, investigación y deducción inteligente.",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683581621962"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683581621962"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596af86051796ad9b6feb6"
+  },
+  "nombre": "Suspenso",
+  "descripcion": "Estado de tensión, de lo que pueda ocurrirles a los personajes y, por lo tanto, atento al desarrollo del conflicto o nudo de la narración.",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683581688132"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683581688132"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64596b286051796ad9b6feb9"
+  },
+  "nombre": "Humor Negro",
+  "descripcion": "Tratar temas tabú, como la muerte, abordados de manera humorística. Es un tipo de comedia que utiliza el humor ácido para provocar risa.",
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683581736860"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683581736860"
     }
   },
   "__v": 0

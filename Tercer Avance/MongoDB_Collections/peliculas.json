@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "645967a06051796ad9b6feb0"
+  },
+  "titulo": "Alicia en el pais de las maravillas",
+  "sinopsis": "Alicia, una joven de 19 años, acude a una mansión victoriana para asistir a una fiesta de la alta sociedad. Cuando está a punto de recibir públicamente una propuesta de matrimonio, sale corriendo tras un conejo blanco.",
+  "añoEstreno": "2010",
+  "Generos": [
+    {
+      "$oid": "645961426051796ad9b6fe94"
+    },
+    {
+      "$oid": "6458a37d07fd6a95483b52b8"
+    },
+    {
+      "$oid": "6458ae0107fd6a95483b52d6"
+    }
+  ],
+  "Director": {
+    "$oid": "645957abccd1817b2d8abb07"
+  },
+  "Actores": [
+    {
+      "$oid": "6459577cccd1817b2d8abb04"
+    },
+    {
+      "$oid": "64595760ccd1817b2d8abb01"
+    },
+    {
+      "$oid": "645957ecccd1817b2d8abb0a"
+    },
+    {
+      "$oid": "645963356051796ad9b6fe9d"
+    }
+  ],
+  "Clasificacion": "PG",
+  "Calificacion": "5",
+  "Duracion": "108",
+  "Poster": "https://i.pinimg.com/564x/cc/07/a2/cc07a29bbdac5a876f35068aa4472240.jpg",
+  "FotoPeli": "https://i.blogs.es/ef9728/alicia-en-el-pais-de-las-maravillas-cartel/1366_2000.jpg",
+  "Trailer": "https://www.youtube.com/watch?v=mUHSNPfNkIs",
+  "Precio_Compra": {
+    "$numberDecimal": "150"
+  },
+  "Precio_Renta": {
+    "$numberDecimal": "75"
+  },
+  "Plataformas": [
+    {
+      "$oid": "64595b5cb35f0f944f2c389d"
+    }
+  ],
+  "administrador": {
+    "$oid": "6456fe6e377833d4a5c01137"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1683580832370"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1683580832370"
+    }
+  },
+  "__v": 0
+}]

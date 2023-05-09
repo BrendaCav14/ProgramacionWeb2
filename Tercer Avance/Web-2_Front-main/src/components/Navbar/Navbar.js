@@ -2,15 +2,29 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { SidebarData } from "./SidebarData";
+import { SidebarData } from "./SidebarData.js";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import MyAxolotlVideo from '../../img/MyAxolotlVideo.jpg';
+import useAuth from "../../hooks/useAuth.js";
+import useDashboard from "../../hooks/useDashboard.js";
+
+
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  const {  cerrarSesionAuth } = useAuth();
+  const {  cerrarSesion } = useDashboard();
+
+
+  const handleCerrarSesion = () => {
+    cerrarSesion()
+    cerrarSesionAuth()
+    localStorage.removeItem('token')
+  }
 
   return (
     <>
@@ -42,6 +56,11 @@ function Navbar() {
                 </li>
               );
             })}
+
+                <li >
+                  <button type="button" onClick={handleCerrarSesion}>Cerrar Sesion</button>
+                </li>
+           
           </ul>
         </nav>
       </IconContext.Provider>
