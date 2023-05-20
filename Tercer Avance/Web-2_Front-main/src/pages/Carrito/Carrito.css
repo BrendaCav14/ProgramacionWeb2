@@ -1,0 +1,77 @@
+.containerCarrito {
+    display: flex;
+    background-color: #695f97;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .container2{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+  }
+  
+  table{
+    width: 100%;
+  }
+
+  th, td{
+    padding: 15px;
+  }
+
+  thead{
+    background-color: #433C68;
+  }
+
+  tbody tr{
+    border-bottom: 1px solid aliceblue;
+  }
+
+  h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+
+  .buttonPagar {
+    height: 50px;
+    width: 40%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    color: #fff;
+    background: #a991d4;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .buttonVaciar {
+    height: 50px;
+    width: 40%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    color: #fff;
+    background: grey;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .buttonPagar:hover {
+    background:#aaaaaa;
+  }
+
+  .buttonVaciar:hover {
+    background:#aaaaaa;
+  }
+
+
+  .container3{
+    padding: 40px;
+  }
+

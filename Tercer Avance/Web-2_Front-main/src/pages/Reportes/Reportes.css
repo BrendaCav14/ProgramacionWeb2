@@ -1,0 +1,39 @@
+.containerReportes{
+    display: flex;
+    background-color: #695f97;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container2{
+    min-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+  }
+
+  .ButtonGenerar {
+    height: 30px;
+    width: 20%;
+    margin: 10px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    color: #fff;
+    background: #a991d4;
+    cursor: pointer;
+  }
+
+  .ButtonGenerar:hover {
+    background:#aaaaaa;
+  }
+
+  .contenido-visible{
+    display: block;
+  }
+
+  .contenido-oculto{
+    display: none;
+  }

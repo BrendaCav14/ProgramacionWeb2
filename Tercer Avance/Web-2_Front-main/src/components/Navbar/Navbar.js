@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData.js";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
-import MyAxolotlVideo from '../../img/MyAxolotlVideo.jpg';
+import MyAxolotlVideo from '../../img/MyAxolotlVideo.png';
 import useAuth from "../../hooks/useAuth.js";
 import useDashboard from "../../hooks/useDashboard.js";
 

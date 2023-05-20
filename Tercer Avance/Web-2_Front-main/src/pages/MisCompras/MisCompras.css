@@ -1,0 +1,78 @@
+.containerCompras {
+    display: flex;
+    background-color: #695f97;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .container2{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+  }
+  
+  table{
+    width: 100%;
+  }
+
+  th, td{
+    padding: 15px;
+  }
+
+  thead{
+    background-color: #433C68;
+  }
+
+  tbody tr{
+    border-bottom: 1px solid aliceblue;
+  }
+
+  h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+
+  .ButtonPelicula {
+    height: 30px;
+    width: 20%;
+    margin: 10px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    color: #fff;
+    background: #a991d4;
+    cursor: pointer;
+  }
+
+  .ButtonPelicula:hover {
+    background:#aaaaaa;
+  }
+
+  .ButtonSerie {
+    height: 30px;
+    width: 20%;
+    margin: 10px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    color: #fff;
+    background: #a991d4;
+    cursor: pointer;
+  }
+
+  .ButtonSerie:hover {
+    background:#aaaaaa;
+  }
+
+  .contenido-visible{
+    display: block;
+  }
+
+  .contenido-oculto{
+    display: none;
+  }
