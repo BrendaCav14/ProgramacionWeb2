@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export default function Genero() {
 
   const params = useParams();
-  const {obtenerGeneroID, generos} = useDashboard();
+  const {obtenerGeneroID, generos, eliminarproyecto} = useDashboard();
 
   
 

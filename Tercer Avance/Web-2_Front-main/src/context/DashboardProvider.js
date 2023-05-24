@@ -1,6 +1,8 @@
 import {useState, useEffect, createContext} from 'react';
 import axios from "axios";
 import useAuth from '../hooks/useAuth';
+import { useNavigate } from "react-router-dom";
+
 
 const DashboardContext = createContext();
 
@@ -14,6 +16,8 @@ const [generoID, setgeneroID] = useState({});
 
 const {auth} = useAuth();
 
+const navigate = useNavigate();
+
 
 const mostrarAlerta = alerta => {
     setAlerta(alerta);
@@ -21,6 +25,16 @@ const mostrarAlerta = alerta => {
     setTimeout(() => {
         setAlerta({})
     }, 4000);
+}
+
+const mostrarAlertaElimina = alerta => {
+    setAlerta(alerta);
+
+    setTimeout(() => {
+        setAlerta({});
+       navigate("/Home/Genero");
+    }, 4000);
+    
 }
 
 useEffect(() => {
@@ -137,6 +151,38 @@ const editarGenero = async  genero => {
       }
 };
 
+const eliminarproyecto = async id => {
+    try {
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+
+            }
+        } 
+
+       const {data} = await axios.delete(`http://localhost:4000/api/generos/${id}`,config);
+
+const generosActualizados = generos.filter(generoState => generoState._id !== id);
+
+setGeneros(generosActualizados);
+
+       mostrarAlertaElimina({
+        msg: data.msg,
+        error: false
+      })
+
+    } catch (error) {
+        console.log(error)
+    }
+  }
+
+
+
+
 const cerrarSesion = () => {
     setGeneral([])
     setGeneros({})
@@ -149,6 +195,7 @@ const cerrarSesion = () => {
         value={{
             general,
             mostrarAlerta,
+            mostrarAlertaElimina,
             alerta,
             nuevoGenero,
             generos,
@@ -156,6 +203,7 @@ const cerrarSesion = () => {
             generoID,
             editarGenero,
             setgeneroID,
+            eliminarproyecto,
 
 
 

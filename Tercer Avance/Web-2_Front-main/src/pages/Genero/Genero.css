@@ -102,6 +102,13 @@
   text-shadow: #695f97;
 }
 
+.elimina{
+  color: white;
+  border-radius: 3px;
+  margin-left:500px;
+  background-color: rgb(197, 29, 29);
+}
+
 .LinkB{
   color: white;
   text-decoration: none;
