@@ -47,6 +47,29 @@ export const SidebarData = [
     icon: <CgIcon.CgProfile />,
     cName: 'nav-text'
   },
+
+  {
+    title: 'Carrito',
+    path: 'Carrito',
+    icon: <AiIcons.AiOutlineShoppingCart />,
+    cName: 'nav-text'
+  },
+
+  {
+    title: 'MisCompras',
+    path: 'MisCompras',
+    icon: <AiIcons.AiOutlineShopping />,
+    cName: 'nav-text'
+  },
+
+  {
+    title: 'Reportes',
+    path: 'Reportes',
+    icon: <TbIcon.TbReport />,
+    cName: 'nav-text'
+  },
+
+
   {
     title: 'Exit',
     path: '/',

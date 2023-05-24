@@ -18,6 +18,11 @@ import Error404 from "./components/Error404/Error.js";
 import Login from "./pages/Login/Login.js";
 import Registro from "./pages/Registro/Registro.js";
 
+import Carrito from "./pages/Carrito/Carrito.js";
+import MisCompras from "./pages/MisCompras/MisCompras.js";
+import Reportes from "./pages/Reportes/Reportes.js";
+// import Reproductor from "./pages/Reproductor/Reproductor.js";
+
 import {AuthProvider} from './context/AuthProvider.js';
 import { DashboardProvider } from "./context/DashboardProvider.js";
 
@@ -48,19 +53,21 @@ function App() {
 
 <Route path="/Home" element={<RutaProtegida/>}>
   <Route index element={<Dashboard/>} /> 
-
   <Route path="Genero" element={<Genero/>} />
   <Route path="Genero/:id" element={<EditarGenero/>} />
-
   <Route path="Actor" element={<Actor/>} />
-
   <Route path="Director" element={<Director/>} />
-
   <Route path="Movie" element={<Movie/>} />
-
   <Route path="Profile" element={<Profile/>} />
-
+  <Route path="Carrito" element={<Carrito/>} />
+  <Route path="MisCompras" element={<MisCompras/>} />
+  <Route path="Reportes" element={<Reportes/>} />
+  {/* RUTAS PRIVADAS DEL USUARIO AUTENTICADO
   
+    <Route path="Reproductor" element={<Reproductor/>} />
+
+  */}
+
   <Route path="*" element={<Error404/>} />
 
   </Route>
