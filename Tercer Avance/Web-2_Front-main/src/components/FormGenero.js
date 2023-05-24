@@ -96,7 +96,7 @@ value={descripcion} onChange={e => setdescripcion(e.target.value)}/>
 
 
 
-<input name="registrarse" id="registrarse" type="submit" className="buttonA" value={id ? 'Actualizar' : 'Agregar'}></input>
+<input name="registrarse" id="registrarse" type="submit" className="buttonA" value={'Agregar'}></input>
 
 
 
