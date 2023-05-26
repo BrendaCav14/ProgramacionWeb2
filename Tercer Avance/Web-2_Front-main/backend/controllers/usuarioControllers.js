@@ -5,13 +5,14 @@ import generarJWT from "../helpers/generarJWT.js";
 import {emailRegistro, emailOlvidePassword} from "../helpers/emails.js";
 
 
+
 const registrar = async (req,res) => {
 // Evitar registros duplicados
 const {email} = req.body;
 const existeUsuario = await Usuario.findOne({email});
 
 if(existeUsuario){
-    const error = new Error("Error - Usuario ya Registrado");
+    const error = new Error("Usuario ya Registrado");
     return res.status(400).json({mensaje: error.message});
 }
 
@@ -40,6 +41,7 @@ if(existeUsuario){
 
 const autenticar = async (req,res) => {
 
+    
     const {TipoCuenta,email,password} = req.body;
     //Comprobar si el usuario existe
 
@@ -76,15 +78,20 @@ const autenticar = async (req,res) => {
          TipoCuenta: usuarioP.TipoCuenta,
          foto: usuarioP.foto,
          token: generarJWT(usuarioP._id)
+         
+        });         
+        
 
-
-        })
      }
      else{
         console.log("Es Incorrecto");
         const error = new Error("El password es incorrecto");
         return res.status(403).json({msg: error.message});
+
+
      }
+
+
 
 
 };
@@ -139,6 +146,9 @@ const olvidePassword = async (req,res) =>{
         res.json({mensaje: "Hemos enviado un email con las instrucciones"});
     } catch (error) {
         console.log(error);
+
+
+
     }
     
 };
@@ -186,5 +196,10 @@ const perfil = async (req,res) => {
     const {usuario} = req;
     res.json(usuario);
 };
+
+
+
+
+
 
 export { registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil  };

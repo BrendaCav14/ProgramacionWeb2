@@ -31,12 +31,12 @@ if([TipoCuenta,email,password].includes('') ){
 
 
 
-      //Crear el usuario en la API
+      //Crear el autenticar usuario en la API
       try {
         const {data} = await axios.post('http://localhost:4000/api/usuarios/login',
         {TipoCuenta,email,password});
         setalerta({});
-        console.log({data});
+        // console.log({data});
         localStorage.setItem('token',data.token);
         setAuth(data);
         navigate("/Home");
@@ -48,7 +48,8 @@ if([TipoCuenta,email,password].includes('') ){
           msg: error.response.data.msg,
           error: true
         })
-    
+
+
         
       }
 
