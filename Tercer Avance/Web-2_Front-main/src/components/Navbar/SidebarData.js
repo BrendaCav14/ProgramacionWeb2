@@ -10,7 +10,7 @@ import * as MdIcon from "react-icons/md";
 
 
 export const SidebarData = [
- 
+  
   {
     title: 'Dashboard',
     path: '/Home',
@@ -45,20 +45,6 @@ export const SidebarData = [
     title: 'Profile',
     path: 'Profile',
     icon: <CgIcon.CgProfile />,
-    cName: 'nav-text'
-  },
-
-  {
-    title: 'Carrito',
-    path: 'Carrito',
-    icon: <AiIcons.AiOutlineShoppingCart />,
-    cName: 'nav-text'
-  },
-
-  {
-    title: 'MisCompras',
-    path: 'MisCompras',
-    icon: <AiIcons.AiOutlineShopping />,
     cName: 'nav-text'
   },
 

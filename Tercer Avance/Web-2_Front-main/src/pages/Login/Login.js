@@ -4,6 +4,7 @@ import { useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth.js";
+import MyAxolotlVideo from '../../img/MyAxolotlVideo.png';
 
 export default function Login() {
   const [TipoCuenta,setCuenta] = useState('');
@@ -39,7 +40,13 @@ if([TipoCuenta,email,password].includes('') ){
         // console.log({data});
         localStorage.setItem('token',data.token);
         setAuth(data);
-        navigate("/Home");
+
+        if(data.TipoCuenta === "Administrador"){
+          navigate("/Home");
+      }else{
+          navigate("/Welcome");
+      }
+        
         
  return
       } catch (error) {
@@ -59,8 +66,11 @@ const {msg} = alerta;
 //const {mensaje} = alerta2;
 
   return (
-
-    <div className="containerLogin">
+   
+    
+    <div className="containerLogin"> 
+    <div><img className='Axolotlogin' src={MyAxolotlVideo}></img></div>
+    
       <div className="Login">
         <header className="headerLogin">Inicio de Sesion</header>
 

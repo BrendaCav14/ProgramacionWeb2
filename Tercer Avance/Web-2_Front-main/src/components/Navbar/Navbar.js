@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { SidebarData } from "./SidebarData.js";
+import { SidebarCliente } from "./SidebarCliente.js";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import MyAxolotlVideo from '../../img/MyAxolotlVideo.png';
@@ -12,13 +13,16 @@ import useDashboard from "../../hooks/useDashboard.js";
 
 
 
+
+
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
   const {  cerrarSesionAuth } = useAuth();
-  const {  cerrarSesion } = useDashboard();
+ 
+  const {  cerrarSesion , tipoCuenta} = useDashboard();
 
 
   const handleCerrarSesion = () => {
@@ -26,6 +30,8 @@ function Navbar() {
     cerrarSesionAuth()
     localStorage.removeItem('token')
   }
+
+ 
 
   return (
     <>
@@ -36,9 +42,9 @@ function Navbar() {
             <img className='Axolotl' src={MyAxolotlVideo}></img>
             
           </Link>
-          <img className="perfil" src={Image1}></img>
+          
           <div className="divImage">
-
+<img className="perfil" src={Image1}></img>
           </div>
 
         </div>
@@ -50,10 +56,20 @@ function Navbar() {
               </Link>
             </li>
 
+            {tipoCuenta === "Administrador" ? 
             
-
-
-            {SidebarData.map((item, index) => {
+            SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            }) 
+            :             
+            SidebarCliente.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
@@ -63,6 +79,9 @@ function Navbar() {
                 </li>
               );
             })}
+
+
+            {}
 
                 <li >
                   <button type="button" className="cerrarsesion" onClick={handleCerrarSesion}>Cerrar Sesion</button>

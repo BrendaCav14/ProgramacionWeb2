@@ -11,8 +11,12 @@ const DashboardProvider = ({children}) =>{
 
 const [general, setGeneral] = useState([]);
 const [generos, setGeneros] = useState([]);
+const [tipoCuenta, setTipoCuenta] = useState([]);
+
 const [alerta, setAlerta] = useState({});
 const [generoID, setgeneroID] = useState({});
+
+
 
 const {auth} = useAuth();
 
@@ -36,6 +40,37 @@ const mostrarAlertaElimina = alerta => {
     }, 4000);
     
 }
+
+
+useEffect(() => {
+const obtenerTipodeCuenta = async () =>{
+   
+
+    try {
+        const token = localStorage.getItem('token');
+        if(!token) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+
+            }
+        }
+        const {data} = await axios.get(`http://localhost:4000/api/usuarios/TipoCuenta`,config);
+
+        setTipoCuenta(data);
+
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+obtenerTipodeCuenta()
+}, [auth])
+
+
+
 
 useEffect(() => {
 const ObtenerGeneroUser = async () =>{
@@ -151,7 +186,7 @@ const editarGenero = async  genero => {
       }
 };
 
-const eliminarproyecto = async id => {
+const eliminargenero = async id => {
     try {
         const tokenG = localStorage.getItem('token');
         if(!tokenG) return
@@ -186,8 +221,10 @@ setGeneros(generosActualizados);
 const cerrarSesion = () => {
     setGeneral([])
     setGeneros({})
+    setTipoCuenta([])
     setAlerta({})
     setgeneroID({})
+    
 }
 
     return(
@@ -203,7 +240,10 @@ const cerrarSesion = () => {
             generoID,
             editarGenero,
             setgeneroID,
-            eliminarproyecto,
+
+            tipoCuenta,
+            
+            eliminargenero,
 
 
 

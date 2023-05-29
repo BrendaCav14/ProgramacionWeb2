@@ -4,6 +4,8 @@ import "./Registro.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import MyAxolotlVideo from '../../img/MyAxolotlVideo.png';
+
 
 
 export default function Registro() {
@@ -17,6 +19,7 @@ export default function Registro() {
   const [email,setEmail] = useState('');
   const [password,setcontraseña] = useState('');
   const [contraseña2,setcontraseña2] = useState('');
+
   const [foto,setfoto] = useState('');
 
   const [alerta,setalerta] = useState({});
@@ -53,6 +56,7 @@ if([TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,contra
       };
 
       setalerta({});
+
 
       //Crear el usuario en la API
       try {
@@ -91,6 +95,22 @@ if([TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,contra
 };
 
 
+function convertToBase64(e){
+  
+  var reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+
+  reader.onload = () =>{
+    console.log(reader.result);
+    setfoto(reader.result);
+  }
+  reader.onerror = error => {
+    console.log("Error: ", error);
+  };
+
+}
+
+
 const{msg} = alerta;
 const{msg2} = correcto;
 
@@ -99,6 +119,7 @@ const{msg2} = correcto;
 
 
     <div className="containerRegistro">
+      <div><img className='Axolotreg' src={MyAxolotlVideo}></img></div>
       <div className="Registro">
         <header className="headerRegistro">Registrarse</header>
 
@@ -135,9 +156,17 @@ value={TipoCuenta} onChange={e => setcuenta(e.target.value)}>
         value={contraseña2} onChange={e => setcontraseña2(e.target.value)}/>
 
         </div>
-        <input name="foto" id="foto" type="file" placeholder="Seleccione Foto" className="inputLarge"
-        value={foto} onChange={e => setfoto(e.target.value)}/>
 
+<div className="auth-inner" style={{ width: "auto"}}>
+  
+  {foto === "" || foto === null?"" : <img className="fotoperfil" width={100} height={100} src={foto} alt="url"/>}
+
+
+        <input name="foto" id="foto" type="file" accept=".jpg, .png, .jpeg" placeholder="Seleccione Foto" className="inputLarge"
+          onChange={convertToBase64} />
+</div>
+        
+<br></br>
 
         <input name="registrarse" id="registrarse" type="submit" className="buttonRegistrar" value="Crear Cuenta"></input>
 </form>

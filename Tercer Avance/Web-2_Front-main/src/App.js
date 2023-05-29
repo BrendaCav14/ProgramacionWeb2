@@ -18,16 +18,17 @@ import Error404 from "./components/Error404/Error.js";
 import Login from "./pages/Login/Login.js";
 import Registro from "./pages/Registro/Registro.js";
 
+import DashboardCliente from "./pages/DashboardCliente/DashboardCliente.js";
 import Carrito from "./pages/Carrito/Carrito.js";
 import MisCompras from "./pages/MisCompras/MisCompras.js";
 import Reportes from "./pages/Reportes/Reportes.js";
-// import Reproductor from "./pages/Reproductor/Reproductor.js";
+import Reproductor from "./pages/Reproductor/Reproductor.js";
 
 import {AuthProvider} from './context/AuthProvider.js';
 import { DashboardProvider } from "./context/DashboardProvider.js";
 
 //? IMPORTACION DE COMPONENTES ?//
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 
 
 
@@ -49,7 +50,7 @@ function App() {
 
 </Route>  
 
-{/* RUTAS PRIVADAS DEL USUARIO AUTENTICADO*/}
+{/* RUTAS PRIVADAS DEL USUARIO ADMINISTRADOR  AUTENTICADO*/}
 
 <Route path="/Home" element={<RutaProtegida/>}>
   <Route index element={<Dashboard/>} /> 
@@ -59,8 +60,6 @@ function App() {
   <Route path="Director" element={<Director/>} />
   <Route path="Movie" element={<Movie/>} />
   <Route path="Profile" element={<Profile/>} />
-  <Route path="Carrito" element={<Carrito/>} />
-  <Route path="MisCompras" element={<MisCompras/>} />
   <Route path="Reportes" element={<Reportes/>} />
   {/* RUTAS PRIVADAS DEL USUARIO AUTENTICADO
   
@@ -71,6 +70,29 @@ function App() {
   <Route path="*" element={<Error404/>} />
 
   </Route>
+
+
+
+  {/* RUTAS PRIVADAS DEL USUARIO ADMINISTRADOR  AUTENTICADO*/}
+
+<Route path="/Welcome" element={<RutaProtegida/>}>
+  <Route index element={<DashboardCliente/>} /> 
+  <Route path="Profile" element={<Profile/>} />
+  <Route path="Carrito" element={<Carrito/>} />
+  <Route path="MisCompras" element={<MisCompras/>} />
+  <Route path="Reportes" element={<Reportes/>} />
+  <Route path="Reproductor" element={<Reproductor/>} />
+
+  {/* RUTAS PRIVADAS DEL USUARIO AUTENTICADO
+  
+    
+
+  */}
+
+  <Route path="*" element={<Error404/>} />
+
+  </Route>
+
         </Routes>
         </DashboardProvider>
         </AuthProvider>

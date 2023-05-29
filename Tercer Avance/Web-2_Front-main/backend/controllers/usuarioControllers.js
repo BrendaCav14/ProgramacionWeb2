@@ -17,9 +17,27 @@ if(existeUsuario){
 }
 
 
+
  try{
-    const usuarioR = new Usuario(req.body);
+    
+const usuarioR = new Usuario(req.body);
+
+const foto = req.body.usuarioR.foto;
+
+const data = foto['$ngfDataUrl'];
+
+const split = data.split(',');
+
+const base64string = split[1];
+
+const buffer = new Buffer.from(base64string, "base64");
+
+usuarioR.foto.data = buffer;
+
+ 
+
     usuarioR.token = generarToken();
+
     const resultado = await usuarioR.save();
 
     // Enviar Email de confirmacion
@@ -32,6 +50,7 @@ if(existeUsuario){
 
     res.json({msg: "Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta."});
  }
+
  catch(error){
      console.log(error);
  }
@@ -197,9 +216,24 @@ const perfil = async (req,res) => {
     res.json(usuario);
 };
 
+const obtenerUsuario = async (req,res) => {
+    const {usuario} = req;
+    res.json(usuario.TipoCuenta);
+};
+
+const editarUsuario = async (req,res) => {
+
+    const {usuario} = req;
+    res.json(usuario);
+};
+
+const eliminarUsuario = async (req,res) => {
+
+    const {usuario} = req;
+    res.json(usuario);
+};
 
 
 
 
-
-export { registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil  };
+export { registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil,obtenerUsuario,editarUsuario,eliminarUsuario  };
