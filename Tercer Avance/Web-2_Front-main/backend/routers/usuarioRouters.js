@@ -1,9 +1,11 @@
 import express from "express";
 const router = express.Router();
 
+
 import {registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil,
     obtenerUsuario,editarUsuario,eliminarUsuario} from '../controllers/usuarioControllers.js';
 import checkAuth from "../middleware/checkAuth.js";
+
 
 
 

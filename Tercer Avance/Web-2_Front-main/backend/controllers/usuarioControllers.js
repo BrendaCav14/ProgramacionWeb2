@@ -3,12 +3,40 @@ import generarID from "../helpers/generarID.js";
 import generarToken from "../helpers/generarID.js";
 import generarJWT from "../helpers/generarJWT.js";
 import {emailRegistro, emailOlvidePassword} from "../helpers/emails.js";
+import multer from "multer";
+// img storage path
+const imgconfig = multer.diskStorage({
+    destination:(req,file,callback)=> {
+        callback(null,"./uploads")
+    },
+    filename:(req,file,callback)=>{
+        callback(null, `imgae-${Date.now()}.${file.originalname}`)
+    }
+})
 
 
+// img filter
+const isImage = (req,file,callback)=>{
+    if(file.mimetype.startsWith("image")){
+        callback(null, true)
+    }else{
+        callback(new Error("Solo imagenes son aceptadas"))
+    }
+}
 
-const registrar = async (req,res) => {
+const upload = multer({
+    storage: imgconfig,
+    fileFilter: isImage
+});
+
+
+const registrar = (upload.single("foto"), async(req,res) => {
 // Evitar registros duplicados
 const {email} = req.body;
+
+
+//const {filename} = req.body.foto;
+
 const existeUsuario = await Usuario.findOne({email});
 
 if(existeUsuario){
@@ -17,22 +45,9 @@ if(existeUsuario){
 }
 
 
-
  try{
     
 const usuarioR = new Usuario(req.body);
-
-const foto = req.body.usuarioR.foto;
-
-const data = foto['$ngfDataUrl'];
-
-const split = data.split(',');
-
-const base64string = split[1];
-
-const buffer = new Buffer.from(base64string, "base64");
-
-usuarioR.foto.data = buffer;
 
  
 
@@ -48,15 +63,15 @@ usuarioR.foto.data = buffer;
     })
 
 
-    res.json({msg: "Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta."});
+    res.status(201).json({msg: "Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta."});
  }
 
  catch(error){
-     console.log(error);
+     res.status(401).json({status:401,error})
  }
 
    
-};
+});
 
 const autenticar = async (req,res) => {
 

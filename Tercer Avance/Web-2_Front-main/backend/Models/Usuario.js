@@ -51,16 +51,11 @@ TipoCuenta:{
     require: true,
     trim: true
 },
-// foto:{
-//    type: String,
-//    require: false,
+foto:{
+   type: String,
+   require: false,
 
-// },
-foto: {
-    base64: String,
-    imageFormat: String
-    },
-
+},
 token:{
     type: String,
 },
