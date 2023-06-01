@@ -11,7 +11,7 @@ router.route("/")
 
 router.route("/:id")
 .get(checkAuth,obtenerActor)
-.put(checkAuth,editarActor)
+.put(checkAuth, editarActor)
 .delete(checkAuth,eliminarActor);
 
 export default router;

@@ -1,5 +1,4 @@
-import "./Genero.css";
-import FormGenero from "../../components/FormGenero.js";
+import "./Director.css";
 import { Link,useParams} from "react-router-dom";
 import useDashboard from "../../hooks/useDashboard.js";
 import { useEffect , useState} from "react";
@@ -7,40 +6,40 @@ import Alert from "react-bootstrap/Alert";
 
 
 
-export default function EditarGenero() {
+export default function EditarDirector() {
 
-  const [id, setId] = useState(null);
+  const [id, setId] = useState('');
   const [nombre, setNombre] = useState('');
-  const [descripcion, setdescripcion] = useState('');
+  const [apellido, setApellido] = useState('');
 
 
   const params = useParams();
-  const {obtenerGeneroID, editarGenero,generoID,eliminarproyecto,mostrarAlerta,alerta} = useDashboard();
+  const {obtenerDirectorID, editarDirector,directorID,eliminarproyecto,mostrarAlerta,alerta} = useDashboard();
 
   useEffect(() => {
     if(params.id)
     {
         console.log('Editando....')
-        setId(generoID._id)
-        setNombre(generoID.nombre)
-        setdescripcion(generoID.descripcion)
+        setId(directorID._id)
+        setNombre(directorID.nombre)
+        setApellido(directorID.apellido)
 
     }
     
     else{
         setNombre('')
-        setdescripcion('')
+        setApellido('')
     }
     
      }, [params])
   
 
   useEffect(() => {
-obtenerGeneroID(params.id);
+obtenerDirectorID(params.id);
   }, [])
 
 
-// const {nombre, descripcion } = generoID;
+
  
 
 
@@ -48,7 +47,7 @@ obtenerGeneroID(params.id);
 const handleSubmit = async e => {
   e.preventDefault();
 
-  if([nombre,descripcion].includes('') ){
+  if([nombre,apellido].includes('') ){
     mostrarAlerta({
       msg: 'Todos los campos son obligatorios.',
       error: true
@@ -59,14 +58,14 @@ return
   }
   else{
       
-    editarGenero({nombre,descripcion});
+    editarDirector({nombre,apellido});
       mostrarAlerta({
           msg: 'Cambios Realizados',
           error: false
         })
 
       setNombre('');
-      setdescripcion('');
+      setApellido('');
   }
 
 // Pasar los datos hacia el provider
@@ -81,7 +80,7 @@ return
 
 const HandleClick = () =>{
 
-if(window.confirm('Deseas eliminar este genero?')){
+if(window.confirm('Deseas eliminar este Director/a?')){
 eliminarproyecto(params.id);
 }else{
 console.log('No Eliminado')
@@ -93,12 +92,12 @@ const {msg} = alerta;
   return (
     <>
 
-    <div className="containerGenero">
-      <div className="containerGeneralGenero">
+    <div className="containerDirector">
+      <div className="containerGeneralDirector">
         <div className="Area-Formulario">
         <div className="container2">
-          <h1 className="tituloMovie">Editar Genero: {generoID.nombre}</h1>
-          <h2 className="tituloMovie"> {generoID.descripcion}</h2>
+          <h1 className="tituloMovie">Editar Director/a: {directorID.nombre}</h1>
+          <p className="tituloMovie"> {directorID.apellido}</p>
           <div> <button className="elimina" onClick={HandleClick}> Eliminar </button></div>
 
           <hr className="separador" />
@@ -118,11 +117,11 @@ const {msg} = alerta;
       </Alert>}
   </div>
 
-<input name="nombre" id="nombre" type="text" placeholder="Genero de Pelicula/Serie" className="inputLarge" 
+<input name="nombre" id="nombre" type="text" placeholder="Nombre del Director/a" className="inputLarge" 
 value={nombre} onChange={e => setNombre(e.target.value)}/>
 
-<textarea name="descripcion" id="descripcion" type="text" placeholder="Breve Descripcion" className="inputLarge2" 
-value={descripcion} onChange={e => setdescripcion(e.target.value)}/>
+<input name="apellidos" id="apellidos" type="text" placeholder="Apellidos del Director/a" className="inputLarge" 
+value={apellido} onChange={e => setApellido(e.target.value)}/>
 
 
 
@@ -135,7 +134,7 @@ value={descripcion} onChange={e => setdescripcion(e.target.value)}/>
 
   <div>
 <button className="buttonB">
-  <Link className="LinkB" to="/Home/Genero">Cancelar</Link>
+  <Link className="LinkB" to="/Home/Director">Cancelar</Link>
 </button>
 
 </div>

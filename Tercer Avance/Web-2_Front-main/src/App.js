@@ -12,6 +12,8 @@ import Dashboard from "./pages/Dashboard/Dashboard.js";
 import Director from "./pages/Director/Director.js";
 import Genero from "./pages/Genero/Genero.js";
 import EditarGenero from "./pages/Genero/EditarGenero.js";
+import EditarActor from "./pages/Actor/EditarActor.js";
+import EditarDirector from "./pages/Director/EditarDirector.js";
 import Movie from "./pages/Movie/Movie.js";
 import Profile from "./pages/Profile/Profile.js";
 import Error404 from "./components/Error404/Error.js";
@@ -56,7 +58,9 @@ function App() {
   <Route path="Genero" element={<Genero/>} />
   <Route path="Genero/:id" element={<EditarGenero/>} />
   <Route path="Actor" element={<Actor/>} />
+  <Route path = "Actor/:id" element = {<EditarActor/>} />
   <Route path="Director" element={<Director/>} />
+  <Route path = "Director/:id" element = {<EditarDirector/>} />
   <Route path="Movie" element={<Movie/>} />
   <Route path="Profile" element={<Profile/>} />
   <Route path="Carrito" element={<Carrito/>} />

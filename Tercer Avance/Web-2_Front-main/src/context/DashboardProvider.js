@@ -10,9 +10,13 @@ const DashboardProvider = ({children}) =>{
 
 
 const [general, setGeneral] = useState([]);
-const [generos, setGeneros] = useState([]);
 const [alerta, setAlerta] = useState({});
+const [generos, setGeneros] = useState([]);
 const [generoID, setgeneroID] = useState({});
+const [actores, setActores] = useState([]);
+const [actorID, setactorID] = useState({});
+const [directores, setDirectores] = useState({});
+const [directorID, setdirectorID] = useState({});
 
 const {auth} = useAuth();
 
@@ -62,8 +66,53 @@ const ObtenerGeneroUser = async () =>{
 
 
 }; ObtenerGeneroUser()
- }, [auth])
+ }, [auth]
 
+ )
+
+ useEffect(() => { const ObtenerActorUser = async () => {
+
+    try{
+        const tokenUser = localStorage.getItem('token');
+        if(!tokenUser) return
+        const config = {
+            headers:{
+                "Content-Type" : "application/json",
+                Authorization: `Bearer ${tokenUser}`
+            }
+        }
+        const {data} = await axios.get('http://localhost:4000/api/actores', config);
+
+        setActores(data);
+    } catch (error){
+        console.log(error);
+    }
+    
+ }; ObtenerActorUser()
+ 
+}, [auth])
+
+useEffect(() => { const ObtenerDirectorUser = async () => {
+
+    try{
+        const tokenUser = localStorage.getItem('token');
+        if(!tokenUser) return
+        const config = {
+            headers:{
+                "Content-Type" : "application/json",
+                Authorization: `Bearer ${tokenUser}`
+            }
+        }
+        const {data} = await axios.get('http://localhost:4000/api/directores', config);
+
+        setDirectores(data);
+    } catch (error){
+        console.log(error);
+    }
+    
+ }; ObtenerDirectorUser()
+ 
+}, [auth])
 
 
 const nuevoGenero = async genero =>{
@@ -93,9 +142,43 @@ const nuevoGenero = async genero =>{
 };
 
 
+const nuevoActor = async actor => {
+    try {
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
 
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+            }
+        }
 
+        const {data} = await axios.post('http://localhost:4000/api/actores', actor, config);
+        setActores([...actores, data]);
+    } catch (error){
+        console.log(error);
+    }
+};
 
+const nuevoDirector = async director => {
+    try {
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+            }
+        }
+
+        const {data} = await axios.post('http://localhost:4000/api/directores', director, config);
+        setDirectores([...directores, data]);
+    } catch (error){
+        console.log(error);
+    }
+};
 
 
 
@@ -119,6 +202,46 @@ const obtenerGeneroID = async id => {
        
 
     } catch (error) {
+        console.log(error);
+    }
+};
+
+const obtenerActorID = async id => {
+    console.log(id);
+    try{
+        const token = localStorage.getItem('token');
+        if(!token) return
+
+        const config = {
+            headers: {
+                "Content-Type" : "application/json", 
+                Authorization: `Bearer ${token}`
+            }
+        }
+
+        const {data} = await axios.get(`http://localhost:4000/api/actores/${id}`, config);
+        setactorID(data);
+    }catch (error){
+        console.log(error);
+    }
+};
+
+const obtenerDirectorID = async id => {
+    console.log(id);
+    try{
+        const token = localStorage.getItem('token');
+        if(!token) return
+
+        const config = {
+            headers: {
+                "Content-Type" : "application/json", 
+                Authorization: `Bearer ${token}`
+            }
+        }
+
+        const {data} = await axios.get(`http://localhost:4000/api/directores/${id}`, config);
+        setdirectorID(data);
+    }catch (error){
         console.log(error);
     }
 };
@@ -151,6 +274,48 @@ const editarGenero = async  genero => {
       }
 };
 
+const editarActor = async actor => {
+    try{
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers: {
+                "Content-Type" : "application/json",
+                Authorization: `Bearer ${tokenG}`
+            }
+        }
+
+        const {data} = await axios.put(`http://localhost:4000/api/actores/${actor.id}`, actor, config);
+        const actoresActualizados = actores.map (actorState => actorState._id === data._id ? data : actorState);
+
+        setActores(actoresActualizados);
+    } catch (error){
+        console.log(error);
+    }
+};
+
+const editarDirector = async director => {
+    try{
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers: {
+                "Content-Type" : "application/json",
+                Authorization: `Bearer ${tokenG}`
+            }
+        }
+
+        const {data} = await axios.put(`http://localhost:4000/api/directores/${director.id}`, director, config);
+        const directoresActualizados = directores.map (directorState => directorState._id === data._id ? data : directorState);
+
+        setDirectores(directoresActualizados);
+    } catch (error){
+        console.log(error);
+    }
+};
+
 const eliminarproyecto = async id => {
     try {
         const tokenG = localStorage.getItem('token');
@@ -179,7 +344,7 @@ setGeneros(generosActualizados);
         console.log(error)
     }
   }
-
+  
 
 
 
@@ -188,6 +353,8 @@ const cerrarSesion = () => {
     setGeneros({})
     setAlerta({})
     setgeneroID({})
+    setactorID({})
+    setdirectorID({})
 }
 
     return(
@@ -204,7 +371,18 @@ const cerrarSesion = () => {
             editarGenero,
             setgeneroID,
             eliminarproyecto,
-
+            nuevoActor,
+            actores,
+            obtenerActorID,
+            actorID,
+            editarActor,
+            setactorID, 
+            nuevoDirector,
+            directores,
+            obtenerDirectorID,
+            directorID,
+            editarDirector,
+            setdirectorID,
 
 
             cerrarSesion
