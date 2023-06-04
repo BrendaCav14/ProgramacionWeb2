@@ -4,6 +4,7 @@
     grid-template-rows: 0.2fr 2fr 0fr;
     gap: 0px 0px;
     grid-auto-flow: row;
+    background-color: rgb(189, 171, 147);
     grid-template-areas:
       ". . ."
       ". Registro ."
@@ -13,6 +14,7 @@
   .Registro {
     grid-area: Registro;
     max-width: 100vh;
+    margin-top: -300px;
     border-radius: 10px;
     border: 3px solid #a991d4;
     padding: 50px;
@@ -89,4 +91,14 @@
     max-width: 100%;
     color: #ffeefd;
     background: #938296;
+  }
+
+  .fotoperfil{
+    margin-left:400px;
+  }
+
+  .Axolotreg{
+    width: 400px;
+    margin-left: 30px;
+    margin-top:150px;
   }

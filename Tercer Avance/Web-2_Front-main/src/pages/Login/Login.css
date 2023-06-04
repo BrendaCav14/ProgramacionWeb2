@@ -5,6 +5,7 @@
   grid-template-rows: 0.7fr 1.5fr 0.7fr;
   gap: 0px 0px;
   grid-auto-flow: row;
+  background-color: rgb(189, 171, 147);
   grid-template-areas:
     ". . ."
     ". Login ."
@@ -14,6 +15,7 @@
 .Login {
   grid-area: Login;
   max-width: 100vh;
+  margin-left:-550px;
   border-radius: 10px;
   border: 3px solid #a991d4;
   padding: 50px;
@@ -69,7 +71,7 @@
 
 .txtWhite2{
   color: #fff;
-  margin-left:120px;
+  margin-left:200px;
   margin-top:100px;
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
@@ -92,4 +94,10 @@
 }
 .buttonRegister:hover {
   background:#d1cfd1;
+}
+
+.Axolotlogin{
+  width: 400px;
+  margin-left: 500px;
+  margin-top:150px;
 }

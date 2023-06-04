@@ -1,8 +1,11 @@
 import express from "express";
 const router = express.Router();
 
-import {registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil} from '../controllers/usuarioControllers.js';
+
+import {registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil,
+    obtenerUsuario,editarUsuario,eliminarUsuario} from '../controllers/usuarioControllers.js';
 import checkAuth from "../middleware/checkAuth.js";
+
 
 
 
@@ -15,6 +18,12 @@ router.get("/restaurar-password/:token", comprobarToken);
 router.post("/restaurar-password/:token", nuevoPassword);
 
 router.get("/perfil", checkAuth, perfil);
+
+router.get("/TipoCuenta",checkAuth,obtenerUsuario);
+
+router.route("/:id")
+.put(checkAuth,editarUsuario)
+.delete(checkAuth,eliminarUsuario);
 
 
 

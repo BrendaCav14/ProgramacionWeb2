@@ -5,6 +5,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import MyAxolotlVideo from '../../img/MyAxolotlVideo.png';
+
+
 
 export default function Registro() {
   const [TipoCuenta,setcuenta] = useState('');
@@ -17,13 +20,21 @@ export default function Registro() {
   const [email,setEmail] = useState('');
   const [password,setcontraseña] = useState('');
   const [contraseña2,setcontraseña2] = useState('');
-  const [foto,setfoto] = useState('');
+
+  const [foto,setfoto] = useState("");
 
   const [alerta,setalerta] = useState({});
   const [correcto,setcorrecto] = useState({});
 
+
+
   const handleSubmit = async e =>{
     e.preventDefault();
+
+    var formData = new FormData();
+    formData.append("foto",foto);
+    console.log(formData);
+    
 
 if([TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,contraseña2,foto].includes('') ){
 
@@ -54,10 +65,12 @@ if([TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,contra
 
       setalerta({});
 
-      //Crear el usuario en la API
+
+
+      // Crear el usuario en la API
       try {
         const {data} = await axios.post('http://localhost:4000/api/usuarios',
-        {TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,foto});
+        {TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,formData});
         
         setcorrecto({
           msg2: data.msg,
@@ -65,17 +78,9 @@ if([TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,contra
         })
        
         
-        setcuenta('');
-        setUsuario('');
-        setNombre('');
-        setNombre2('');
-        setApPat('');
-        setApMat('');
-        setFechaNac('');
-        setEmail('');
-        setcontraseña('');
-        setcontraseña2('');
-        setfoto('');
+        setcuenta('');setUsuario('');setNombre('');setNombre2('');setApPat('');setApMat('');
+        setFechaNac('');setEmail('');setcontraseña('');setcontraseña2('');setfoto('');
+
  return
       } catch (error) {
         setalerta({
@@ -90,6 +95,21 @@ if([TipoCuenta,usuario,nombre,nombre2,ApPat,ApMat,FechaNac,email,password,contra
 
 };
 
+// function convertToBase64(e){
+  
+//   var reader = new FileReader();
+//   reader.readAsDataURL(e.target.files[0]);
+
+//   reader.onload = () =>{
+//     console.log(reader.result);
+//     setfoto(reader.result);
+//   }
+//   reader.onerror = error => {
+//     console.log("Error: ", error);
+//   };
+
+// }
+
 
 const{msg} = alerta;
 const{msg2} = correcto;
@@ -99,6 +119,7 @@ const{msg2} = correcto;
 
 
     <div className="containerRegistro">
+      <div><img className='Axolotreg' src={MyAxolotlVideo}></img></div>
       <div className="Registro">
         <header className="headerRegistro">Registrarse</header>
 
@@ -106,7 +127,7 @@ const{msg2} = correcto;
 
 
 
-<form onSubmit={handleSubmit}>
+<form onSubmit={handleSubmit} encType="multipart/form-data">
 
 <select name="TipoCuenta" id="TipoCuenta" className="inputLarge" 
 value={TipoCuenta} onChange={e => setcuenta(e.target.value)}>
@@ -135,12 +156,21 @@ value={TipoCuenta} onChange={e => setcuenta(e.target.value)}>
         value={contraseña2} onChange={e => setcontraseña2(e.target.value)}/>
 
         </div>
-        <input name="foto" id="foto" type="file" placeholder="Seleccione Foto" className="inputLarge"
-        value={foto} onChange={e => setfoto(e.target.value)}/>
 
+<div className="auth-inner" style={{ width: "auto"}}>
+  
+  {foto === "" || foto === null?"" : <img className="fotoperfil" width={100} height={100} src={foto}/>}
+
+
+        <input name="foto" id="foto" type="file" accept=".jpg, .png, .jpeg" placeholder="Seleccione Foto" className="inputLarge"
+        onChange={e => setfoto(e.target.value)}/>
+</div>
+        
+<br></br>
 
         <input name="registrarse" id="registrarse" type="submit" className="buttonRegistrar" value="Crear Cuenta"></input>
 </form>
+
 <div className={`${alerta.error}`}>
 
 {msg && <Alert variant="danger">

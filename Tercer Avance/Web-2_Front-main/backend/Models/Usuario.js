@@ -54,7 +54,7 @@ TipoCuenta:{
 foto:{
    type: String,
    require: false,
-   trim: true
+
 },
 token:{
     type: String,

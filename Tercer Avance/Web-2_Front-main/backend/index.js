@@ -44,6 +44,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.use("/uploads",express.static("./uploads"));
+
 //ROUTING 
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/generos", generoRoutes);

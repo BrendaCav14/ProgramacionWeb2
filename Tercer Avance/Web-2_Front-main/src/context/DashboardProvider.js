@@ -10,13 +10,17 @@ const DashboardProvider = ({children}) =>{
 
 
 const [general, setGeneral] = useState([]);
-const [alerta, setAlerta] = useState({});
+
 const [generos, setGeneros] = useState([]);
+const [tipoCuenta, setTipoCuenta] = useState([]);
+const [alerta, setAlerta] = useState({});
 const [generoID, setgeneroID] = useState({});
 const [actores, setActores] = useState([]);
 const [actorID, setactorID] = useState({});
 const [directores, setDirectores] = useState({});
 const [directorID, setdirectorID] = useState({});
+
+
 
 const {auth} = useAuth();
 
@@ -40,6 +44,37 @@ const mostrarAlertaElimina = alerta => {
     }, 4000);
     
 }
+
+
+useEffect(() => {
+const obtenerTipodeCuenta = async () =>{
+   
+
+    try {
+        const token = localStorage.getItem('token');
+        if(!token) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+
+            }
+        }
+        const {data} = await axios.get(`http://localhost:4000/api/usuarios/TipoCuenta`,config);
+
+        setTipoCuenta(data);
+
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+obtenerTipodeCuenta()
+}, [auth])
+
+
+
 
 useEffect(() => {
 const ObtenerGeneroUser = async () =>{
@@ -274,6 +309,7 @@ const editarGenero = async  genero => {
       }
 };
 
+
 const editarActor = async actor => {
     try{
         const tokenG = localStorage.getItem('token');
@@ -316,7 +352,9 @@ const editarDirector = async director => {
     }
 };
 
-const eliminarproyecto = async id => {
+const eliminarproyecto = async id => { }
+
+const eliminargenero = async id => {
     try {
         const tokenG = localStorage.getItem('token');
         if(!tokenG) return
@@ -351,6 +389,7 @@ setGeneros(generosActualizados);
 const cerrarSesion = () => {
     setGeneral([])
     setGeneros({})
+    setTipoCuenta([])
     setAlerta({})
     setgeneroID({})
     setactorID({})
@@ -383,6 +422,10 @@ const cerrarSesion = () => {
             directorID,
             editarDirector,
             setdirectorID,
+
+            tipoCuenta,
+            
+            eliminargenero,
 
 
             cerrarSesion

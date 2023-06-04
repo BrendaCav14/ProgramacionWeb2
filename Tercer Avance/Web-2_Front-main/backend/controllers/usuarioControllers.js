@@ -3,12 +3,40 @@ import generarID from "../helpers/generarID.js";
 import generarToken from "../helpers/generarID.js";
 import generarJWT from "../helpers/generarJWT.js";
 import {emailRegistro, emailOlvidePassword} from "../helpers/emails.js";
+import multer from "multer";
+// img storage path
+const imgconfig = multer.diskStorage({
+    destination:(req,file,callback)=> {
+        callback(null,"./uploads")
+    },
+    filename:(req,file,callback)=>{
+        callback(null, `imgae-${Date.now()}.${file.originalname}`)
+    }
+})
 
 
+// img filter
+const isImage = (req,file,callback)=>{
+    if(file.mimetype.startsWith("image")){
+        callback(null, true)
+    }else{
+        callback(new Error("Solo imagenes son aceptadas"))
+    }
+}
 
-const registrar = async (req,res) => {
+const upload = multer({
+    storage: imgconfig,
+    fileFilter: isImage
+});
+
+
+const registrar = (upload.single("foto"), async(req,res) => {
 // Evitar registros duplicados
 const {email} = req.body;
+
+
+//const {filename} = req.body.foto;
+
 const existeUsuario = await Usuario.findOne({email});
 
 if(existeUsuario){
@@ -18,8 +46,13 @@ if(existeUsuario){
 
 
  try{
-    const usuarioR = new Usuario(req.body);
+    
+const usuarioR = new Usuario(req.body);
+
+ 
+
     usuarioR.token = generarToken();
+
     const resultado = await usuarioR.save();
 
     // Enviar Email de confirmacion
@@ -30,14 +63,15 @@ if(existeUsuario){
     })
 
 
-    res.json({msg: "Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta."});
+    res.status(201).json({msg: "Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta."});
  }
+
  catch(error){
-     console.log(error);
+     res.status(401).json({status:401,error})
  }
 
    
-};
+});
 
 const autenticar = async (req,res) => {
 
@@ -197,9 +231,24 @@ const perfil = async (req,res) => {
     res.json(usuario);
 };
 
+const obtenerUsuario = async (req,res) => {
+    const {usuario} = req;
+    res.json(usuario.TipoCuenta);
+};
+
+const editarUsuario = async (req,res) => {
+
+    const {usuario} = req;
+    res.json(usuario);
+};
+
+const eliminarUsuario = async (req,res) => {
+
+    const {usuario} = req;
+    res.json(usuario);
+};
 
 
 
 
-
-export { registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil  };
+export { registrar,autenticar,confirmar,olvidePassword,comprobarToken,nuevoPassword,perfil,obtenerUsuario,editarUsuario,eliminarUsuario  };
