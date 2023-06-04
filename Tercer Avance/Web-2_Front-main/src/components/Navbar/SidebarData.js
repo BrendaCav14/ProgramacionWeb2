@@ -67,14 +67,6 @@ export const SidebarData = [
     path: 'Reportes',
     icon: <TbIcon.TbReport />,
     cName: 'nav-text'
-  },
-
-
-  {
-    title: 'Exit',
-    path: '/',
-    icon: <MdIcon.MdExitToApp />,
-    cName: 'nav-text'
   }
 
 ];

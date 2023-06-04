@@ -12,6 +12,11 @@
     font-size: 2rem;
     background: none;
   }
+  .menu-bars2 {
+    margin-left: 12rem;
+    font-size: 2rem;
+    background: none;
+  }
   
   .nav-menu {
     background-color: #433C68;
@@ -75,4 +80,21 @@
   .Axolotl{
     width: 200px;
     margin-left: 30px;
+  }
+
+  .perfil{
+    width:80px;
+    height:80px;
+    margin-left: 1000px;
+    border-radius: 5px;
+  }
+
+
+  .cerrarsesion{
+    margin-top:50px;
+    margin-left:90px;
+    background-color: #24223A;
+    color:white;
+    font-size: 18px;
+    border-radius: 3px;
   }

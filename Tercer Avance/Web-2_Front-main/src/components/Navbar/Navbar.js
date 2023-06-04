@@ -6,6 +6,7 @@ import { SidebarData } from "./SidebarData.js";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import MyAxolotlVideo from '../../img/MyAxolotlVideo.png';
+import Image1 from '../../img/Image1.jpg';
 import useAuth from "../../hooks/useAuth.js";
 import useDashboard from "../../hooks/useDashboard.js";
 
@@ -33,7 +34,9 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
             <img className='Axolotl' src={MyAxolotlVideo}></img>
+            
           </Link>
+          <img className="perfil" src={Image1}></img>
           <div className="divImage">
 
           </div>
@@ -42,10 +45,14 @@ function Navbar() {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
-              <Link to="#" className="menu-bars">
+              <Link to="#" className="menu-bars2">
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
+
+            
+
+
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
@@ -58,7 +65,7 @@ function Navbar() {
             })}
 
                 <li >
-                  <button type="button" onClick={handleCerrarSesion}>Cerrar Sesion</button>
+                  <button type="button" className="cerrarsesion" onClick={handleCerrarSesion}>Cerrar Sesion</button>
                 </li>
            
           </ul>
