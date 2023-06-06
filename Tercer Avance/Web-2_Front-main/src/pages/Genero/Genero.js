@@ -42,7 +42,6 @@ console.log(params);
 
   <div className="GenerosDiv">
     {generos.length ?
-    //  <p className="GenerosReg">Generos Registrados</p> 
 
      generos.map(genero =>(
 

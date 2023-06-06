@@ -19,6 +19,8 @@ const [actores, setActores] = useState([]);
 const [actorID, setactorID] = useState({});
 const [directores, setDirectores] = useState({});
 const [directorID, setdirectorID] = useState({});
+const [peliculas, setPeliculas] = useState({});
+const [peliculasID, setPeliculasID] = useState({});
 
 
 
@@ -41,6 +43,36 @@ const mostrarAlertaElimina = alerta => {
     setTimeout(() => {
         setAlerta({});
        navigate("/Home/Genero");
+    }, 4000);
+    
+}
+
+const mostrarAlertaEliminaDirector = alerta => {
+    setAlerta(alerta);
+
+    setTimeout(() => {
+        setAlerta({});
+       navigate("/Home/Director");
+    }, 4000);
+    
+}
+
+const mostrarAlertaEliminaActor = alerta => {
+    setAlerta(alerta);
+
+    setTimeout(() => {
+        setAlerta({});
+       navigate("/Home/Actor");
+    }, 4000);
+    
+}
+
+const mostrarAlertaEliminaMovie = alerta => {
+    setAlerta(alerta);
+
+    setTimeout(() => {
+        setAlerta({});
+       navigate("/Home/Movie");
     }, 4000);
     
 }
@@ -149,6 +181,27 @@ useEffect(() => { const ObtenerDirectorUser = async () => {
  
 }, [auth])
 
+useEffect(() => { const ObtenerPeliculaUser = async () => {
+
+    try{
+        const tokenUser = localStorage.getItem('token');
+        if(!tokenUser) return
+        const config = {
+            headers:{
+                "Content-Type" : "application/json",
+                Authorization: `Bearer ${tokenUser}`
+            }
+        }
+        const {data} = await axios.get('http://localhost:4000/api/peliculas', config);
+
+        setPeliculas(data);
+    } catch (error){
+        console.log(error);
+    }
+    
+ }; ObtenerPeliculaUser()
+ 
+}, [auth])
 
 const nuevoGenero = async genero =>{
 
@@ -216,10 +269,29 @@ const nuevoDirector = async director => {
 };
 
 
+const nuevaPelicula = async pelicula => {
+    try {
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+            }
+        }
+
+        const {data} = await axios.post('http://localhost:4000/api/peliculas', pelicula, config);
+        setPeliculas([...peliculas, data]);
+    } catch (error){
+        console.log(error);
+    }
+};
+
+
+
 
 const obtenerGeneroID = async id => {
-    console.log(id);
-
     try {
         const token = localStorage.getItem('token');
         if(!token) return
@@ -242,7 +314,7 @@ const obtenerGeneroID = async id => {
 };
 
 const obtenerActorID = async id => {
-    console.log(id);
+    
     try{
         const token = localStorage.getItem('token');
         if(!token) return
@@ -262,7 +334,6 @@ const obtenerActorID = async id => {
 };
 
 const obtenerDirectorID = async id => {
-    console.log(id);
     try{
         const token = localStorage.getItem('token');
         if(!token) return
@@ -276,6 +347,25 @@ const obtenerDirectorID = async id => {
 
         const {data} = await axios.get(`http://localhost:4000/api/directores/${id}`, config);
         setdirectorID(data);
+    }catch (error){
+        console.log(error);
+    }
+};
+
+const obtenerPeliculaID = async id => {
+    try{
+        const token = localStorage.getItem('token');
+        if(!token) return
+
+        const config = {
+            headers: {
+                "Content-Type" : "application/json", 
+                Authorization: `Bearer ${token}`
+            }
+        }
+
+        const {data} = await axios.get(`http://localhost:4000/api/peliculas/${id}`, config);
+        setPeliculasID(data);
     }catch (error){
         console.log(error);
     }
@@ -300,6 +390,7 @@ const editarGenero = async  genero => {
        //Sincronizar el state
        const generosActualizados = generos.map(generoState => generoState._id === data._id ? data : generoState);
 
+       console.log(data);
 
         setGeneros(generosActualizados);
 
@@ -331,6 +422,27 @@ const editarActor = async actor => {
     }
 };
 
+const editarMovie = async pelicula => {
+    try{
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers: {
+                "Content-Type" : "application/json",
+                Authorization: `Bearer ${tokenG}`
+            }
+        }
+
+        const {data} = await axios.put(`http://localhost:4000/api/peliculas/${pelicula.id}`, pelicula, config);
+        const peliculasActualizadas = peliculas.map (peliculaState => peliculaState._id === data._id ? data : peliculaState);
+
+        setPeliculas(peliculasActualizadas);
+    } catch (error){
+        console.log(error);
+    }
+};
+
 const editarDirector = async director => {
     try{
         const tokenG = localStorage.getItem('token');
@@ -352,10 +464,13 @@ const editarDirector = async director => {
     }
 };
 
+
+
 const eliminarproyecto = async id => { }
 
 const eliminargenero = async id => {
     try {
+        console.log('elimnando', id)
         const tokenG = localStorage.getItem('token');
         if(!tokenG) return
 
@@ -382,6 +497,96 @@ setGeneros(generosActualizados);
         console.log(error)
     }
   }
+
+  const eliminarActor = async id => {
+    try {
+        console.log('elimnando', id)
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+
+            }
+        } 
+
+       const {data} = await axios.delete(`http://localhost:4000/api/actores/${id}`,config);
+
+const actoresActualizados = actores.filter(actorState => actorState._id !== id);
+
+setActores(actoresActualizados);
+
+       mostrarAlertaEliminaActor({
+        msg: data.msg,
+        error: false
+      })
+
+    } catch (error) {
+        console.log(error)
+    }
+  }
+
+  const eliminarDirector = async id => {
+    try {
+        console.log('elimnando', id)
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+
+            }
+        } 
+
+       const {data} = await axios.delete(`http://localhost:4000/api/directores/${id}`,config);
+
+const directoresActualizados = directores.filter(directorState => directorState._id !== id);
+
+setDirectores(directoresActualizados);
+
+       mostrarAlertaEliminaDirector({
+        msg: data.msg,
+        error: false
+      })
+
+    } catch (error) {
+        console.log(error)
+    }
+  }
+
+  const eliminarMovie = async id => {
+    try {
+        console.log('elimnando', id)
+        const tokenG = localStorage.getItem('token');
+        if(!tokenG) return
+
+        const config = {
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${tokenG}`
+
+            }
+        } 
+
+       const {data} = await axios.delete(`http://localhost:4000/api/peliculas/${id}`,config);
+
+const peliculasActualizadas = peliculas.filter(peliculaState => peliculaState._id !== id);
+
+setPeliculas(peliculasActualizadas);
+
+       mostrarAlertaEliminaMovie({
+        msg: data.msg,
+        error: false
+      })
+
+    } catch (error) {
+        console.log(error)
+    }
+  }
   
 
 
@@ -394,6 +599,7 @@ const cerrarSesion = () => {
     setgeneroID({})
     setactorID({})
     setdirectorID({})
+    setPeliculasID({})
 }
 
     return(
@@ -422,10 +628,20 @@ const cerrarSesion = () => {
             directorID,
             editarDirector,
             setdirectorID,
+            nuevaPelicula,
+            peliculas,
+            setPeliculasID,
+            obtenerPeliculaID,
+            peliculasID,
+            editarMovie,
+            
 
             tipoCuenta,
             
             eliminargenero,
+            eliminarDirector,
+            eliminarActor,
+            eliminarMovie,
 
 
             cerrarSesion

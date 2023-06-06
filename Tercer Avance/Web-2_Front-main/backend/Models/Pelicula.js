@@ -135,5 +135,6 @@ administrador:{
 timestamps:true,
 });
 
+
 const Pelicula = mongoose.model("Pelicula",peliculaSchema);
 export default Pelicula;

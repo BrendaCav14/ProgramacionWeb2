@@ -21,7 +21,7 @@ const FormActor = () =>{
 
     useEffect(() => {
         if(params.id){
-            console.log('Editando...');
+            
             setId(actorID._id);
             setNombre(actorID.nombre);
             setApellido(actorID.apellido);

@@ -15,7 +15,7 @@ export default function EditarGenero() {
 
 
   const params = useParams();
-  const {obtenerGeneroID, editarGenero,generoID,eliminarproyecto,mostrarAlerta,alerta} = useDashboard();
+  const {obtenerGeneroID, editarGenero,generoID,eliminargenero,mostrarAlerta,alerta} = useDashboard();
 
   useEffect(() => {
     if(params.id)
@@ -39,11 +39,7 @@ export default function EditarGenero() {
 obtenerGeneroID(params.id);
   }, [])
 
-
-// const {nombre, descripcion } = generoID;
  
-
-
     
 const handleSubmit = async e => {
   e.preventDefault();
@@ -55,11 +51,10 @@ const handleSubmit = async e => {
     })
 
 return
-
+  
   }
   else{
-      
-    editarGenero({nombre,descripcion});
+    editarGenero({nombre, descripcion});
       mostrarAlerta({
           msg: 'Cambios Realizados',
           error: false
@@ -71,20 +66,16 @@ return
 
 // Pasar los datos hacia el provider
 
-
-
-
-};
-
+}
 
 
 
 const HandleClick = () =>{
 
 if(window.confirm('Deseas eliminar este genero?')){
-eliminarproyecto(params.id);
+   eliminargenero(params.id)
 }else{
-console.log('No Eliminado')
+  console.log('no')
 }
 }
 
@@ -92,13 +83,13 @@ const {msg} = alerta;
 
   return (
     <>
-
+    
     <div className="containerGenero">
       <div className="containerGeneralGenero">
         <div className="Area-Formulario">
         <div className="container2">
           <h1 className="tituloMovie">Editar Genero: {generoID.nombre}</h1>
-          <h2 className="tituloMovie"> {generoID.descripcion}</h2>
+          <h3 className="tituloMovie"> {generoID.descripcion}</h3>
           <div> <button className="elimina" onClick={HandleClick}> Eliminar </button></div>
 
           <hr className="separador" />
@@ -129,8 +120,6 @@ value={descripcion} onChange={e => setdescripcion(e.target.value)}/>
 <input name="registrarse" id="registrarse" type="submit" className="buttonA" value={'Actualizar'}></input>
 
 
-
-
 </form>
 
   <div>
@@ -144,6 +133,7 @@ value={descripcion} onChange={e => setdescripcion(e.target.value)}/>
         </div>
       </div>
     </div>
+  
   </>
-  );
+ );
 }

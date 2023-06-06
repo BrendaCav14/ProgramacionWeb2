@@ -17,6 +17,7 @@ import carritoDetRoutes from './routers/carritoDetRouters.js';
 import ventaRoutes from './routers/ventaRouters.js';
 import ventaDetRoutes from './routers/ventaDetRouters.js';
 
+
 const app = express();
 
 app.use(express.json());
@@ -59,6 +60,7 @@ app.use("/api/carrito", carritoRoutes);
 app.use("/api/carrito-detalle", carritoDetRoutes);
 app.use("/api/venta", ventaRoutes);
 app.use("/api/venta-detalle", ventaDetRoutes);
+
 
 
 console.log("Configurando Servidor");

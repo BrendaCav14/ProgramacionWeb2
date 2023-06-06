@@ -1,16 +1,49 @@
 import "./Dashboard.css";
 import useDashboard from "../../hooks/useDashboard";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function Dashboard () {
 
 const {general} = useDashboard();
 
 console.log(general);
+const [optionsPelicula, setOptionsPelicula] = useState([]);
+
+useEffect(() =>{
+  const ObtenerPelicula = async () =>{
+      try {
+          const token = localStorage.getItem('token');
+          if(!token) return
+  
+          const config = {
+              headers:{
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`
+  
+              }
+          }
+          const {data} = await axios.get('http://localhost:4000/api/peliculas/',config);
+          console.log(data);
+          setOptionsPelicula(data);
+         
+  
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
+  ObtenerPelicula()
+}, []);
 
   return (
   
       <div className="dashboard">
           <div className="grid-container">
+            {optionsPelicula.map(option => (
+              <img key={option.id} value={option.value} src={option.FotoPeli}></img>
+            ))}
             <img src="https://via.placeholder.com/400x400" alt="imagen 1" />
             <img src="https://via.placeholder.com/400x400" alt="imagen 2" />
             <img src="https://via.placeholder.com/400x400" alt="imagen 3" />

@@ -1,9 +1,11 @@
 import useDashboard from "../hooks/useDashboard";
-import {useState, useEffect} from "react";
+import {useState, useEffect, Component} from "react";
 import {Link, useParams} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
-import ObtenerGeneros from "./ObtenerGeneros";
+import axios from "axios";
+
+
 
 const FormMovie = () => {
     const [id,
@@ -32,18 +34,100 @@ const FormMovie = () => {
         setFotoPeli] = useState('');
     const [trailer,
         setTrailer] = useState('');
-    const [compra,
+    const [Precio_Compra,
         setCompra] = useState('');
-    const [renta,
+    const [Precio_Renta,
         setRenta] = useState('');
     const [plataforma,
         setPlataforma] = useState('');
+
+    const [options, setOptions] = useState([]);
+    const [optionsActor, setOptionsActor] = useState([]);
+    const [optionsDirector, setOptionsDirector] = useState([]);
 
     const navigate = useNavigate();
 
     const {mostrarAlerta, alerta, nuevaPelicula, peliculaID} = useDashboard();
 
     const params = useParams();
+
+    useEffect(() =>{
+        const ObtenerGenero = async () =>{
+            try {
+                const token = localStorage.getItem('token');
+                if(!token) return
+        
+                const config = {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+        
+                    }
+                }
+                const {data} = await axios.get('http://localhost:4000/api/generos/',config);
+                
+                setOptions(data);
+               
+        
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        ObtenerGenero()
+    }, []);
+
+    useEffect(() =>{
+        const ObtenerActor = async () =>{
+            try {
+                const token = localStorage.getItem('token');
+                if(!token) return
+        
+                const config = {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+        
+                    }
+                }
+                const {data} = await axios.get('http://localhost:4000/api/actores/',config);
+                
+                setOptionsActor(data);
+               
+        
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        ObtenerActor()
+    }, []);
+
+    useEffect(() =>{
+        const ObtenerDirector = async () =>{
+            try {
+                const token = localStorage.getItem('token');
+                if(!token) return
+        
+                const config = {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+        
+                    }
+                }
+                const {data} = await axios.get('http://localhost:4000/api/directores/',config);
+                
+                setOptionsDirector(data);
+               
+        
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        ObtenerDirector()
+    }, []);
 
     useEffect(() => {
         if (params.id) {
@@ -61,8 +145,8 @@ const FormMovie = () => {
             setPoster(peliculaID.poster);
             setFotoPeli(peliculaID.FotoPeli);
             setTrailer(peliculaID.trailer);
-            setCompra(peliculaID.compra);
-            setRenta(peliculaID.renta);
+            setCompra(peliculaID.Precio_Compra);
+            setRenta(peliculaID.Precio_Renta);
             setPlataforma(peliculaID.plataforma);
         } else {
 
@@ -100,8 +184,8 @@ const FormMovie = () => {
             trailer,
             director,
             actor,
-            compra,
-            renta,
+            Precio_Compra,
+            Precio_Renta,
             plataforma
         ].includes('')) {
             mostrarAlerta({msg: 'Todos los campos son obligatorios.', error: true})
@@ -121,8 +205,8 @@ const FormMovie = () => {
                 trailer,
                 director,
                 actor,
-                compra,
-                renta,
+                Precio_Compra,
+                Precio_Renta,
                 plataforma
             });
             mostrarAlerta({msg: 'Cambios Realizados', error: false})
@@ -147,8 +231,9 @@ const FormMovie = () => {
 
     const {msg} = alerta;
 
-    return (
+    
 
+    return (
         <form onSubmit={handleSubmit}>
             <br></br>
             <div>
@@ -200,7 +285,7 @@ const FormMovie = () => {
                 type="number"
                 placeholder="Precio de Compra"
                 className="inputSmall"
-                value={compra}
+                value={Precio_Compra}
                 onChange={e => setCompra(e.target.value)}/>
 
             <input
@@ -208,34 +293,55 @@ const FormMovie = () => {
                 type="number"
                 placeholder="Precio de Renta"
                 className="inputSmall"
-                value={renta}
+                value={Precio_Renta}
                 onChange={e => setRenta(e.target.value)}/>
 
             <hr className="separador"/>
 
-            <select name="genero" className="inputLarge" placeholder="Genero">
-                <option>Genero</option>
+            <select name="genero" className="inputLarge" placeholder="Genero" onChange={e => setGenero(e.target.value)}>
+                <option value="" disabled selected>Género</option>
+              {
+                options.map(option => (
+                    <option key={option._id} value={option.value}>{option.nombre}</option>
+                ))
+              }
             </select>
 
-            <select name="actor" className="inputLarge" placeholder="Actor/Actriz">
-                <option>Actor/Actriz</option>
-
+            <select name="actor" className="inputLarge" placeholder="Actor/Actriz" onChange={e => setActor(e.target.value)}>
+                <option value="" disabled selected>Actor/Actriz</option>
+            {
+                optionsActor.map(option => (
+                    <option key={option._id} value={option.value}>{option.nombre} {option.apellido} </option>
+                ))
+              }
             </select>
-            <select name="director" className="inputLarge" placeholder="Director">
-                <option>Director</option>
+            <select name="director" className="inputLarge" placeholder="Director" onChange={e => setDirector(e.target.value)}>
+                <option value="" disabled selected>Director/a</option>
+            {
+                optionsDirector.map(option => (
+                    <option key={option._id} value={option.value}>{option.nombre} {option.apellido} </option>
+                ))
+              }
             </select>
 
-            <select name="plataforma" className="inputLarge" placeholder="plataforma">
-                <option>Plataforma</option>
+            <select name="plataforma" className="inputLarge" placeholder="plataforma" onChange={e => setPlataforma(e.target.value)}>
+                <option value="" disabled selected>Plataforma</option>
+                <option value="Netflix">Netflix</option>
+                <option value="Disney+">Disney+</option>
+                <option value="HBO Max">HBO Max</option>
+                <option value="Amazon Prime">Amazon Prime</option>
+                <option value="Paramount+">Paramount+</option>
+                <option value="Star+">Star+</option>
             </select>
 
-            <input
-                name="clasificacion"
-                type="text"
-                placeholder="Clasificación"
-                className="inputSmall"
-                value={clasificacion}
-                onChange={e => setClasificacion(e.target.value)}/>
+            <select name="clasificacion" className="inputSmall" placeholder="clasificacion" onChange={e => setClasificacion(e.target.value)}>
+                <option value="" disabled selected>Clasificación</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+                <option value="NC-17">NC-17</option>
+            </select>
 
             <input
                 name="calificacion"
@@ -249,18 +355,18 @@ const FormMovie = () => {
 
             <div>
                 <div>
-                <label>Poster:</label>
-                <input type="file" className="inputFile"/>
+                    <label>Poster:</label>
+                    <input type="file" className="inputFile" value={poster} onChange={e => setPoster(e.target.value)}/>
                 </div>
 
                 <div>
-                <label>Foto:</label>
-                <input type="file" className="inputFile"/>
+                    <label>Foto:</label>
+                    <input type="file" className="inputFile" value={FotoPeli} onChange={e => setFotoPeli(e.target.value)}/>
                 </div>
-                
+
                 <div>
-                <label>Trailer:</label>
-                <input type="file" className="inputFile"/>
+                    <label>Trailer:</label>
+                    <input type="file" className="inputFile"value={trailer} onChange={e => setTrailer(e.target.value)}/>
                 </div>
             </div>
 

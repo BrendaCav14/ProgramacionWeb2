@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 const ObtenerGeneros = ({genero}) => {
     const {_id, nombre, descripcion} = genero;
 
+    
+
     return (
         <div className="divgeneros">
 

@@ -36,7 +36,7 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Movie',
+    title: 'Película',
     path: 'Movie',
     icon: <MdIcon.MdMovieEdit />,
     cName: 'nav-text'

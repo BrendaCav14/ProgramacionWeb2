@@ -12,6 +12,7 @@ const pelicula = new Pelicula(req.body);
 pelicula.administrador = req.usuario._id;
 
 
+
 try {
     const peliculaAlmacenado = await pelicula.save();
     res.json(peliculaAlmacenado);

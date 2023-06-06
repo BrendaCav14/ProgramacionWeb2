@@ -14,12 +14,12 @@ export default function EditarDirector() {
 
 
   const params = useParams();
-  const {obtenerDirectorID, editarDirector,directorID,eliminarproyecto,mostrarAlerta,alerta} = useDashboard();
+  const {obtenerDirectorID, editarDirector,directorID,eliminarDirector,mostrarAlerta,alerta} = useDashboard();
 
   useEffect(() => {
     if(params.id)
     {
-        console.log('Editando....')
+        
         setId(directorID._id)
         setNombre(directorID.nombre)
         setApellido(directorID.apellido)
@@ -37,10 +37,6 @@ export default function EditarDirector() {
   useEffect(() => {
 obtenerDirectorID(params.id);
   }, [])
-
-
-
- 
 
 
     
@@ -81,7 +77,7 @@ return
 const HandleClick = () =>{
 
 if(window.confirm('Deseas eliminar este Director/a?')){
-eliminarproyecto(params.id);
+eliminarDirector(params.id);
 }else{
 console.log('No Eliminado')
 }

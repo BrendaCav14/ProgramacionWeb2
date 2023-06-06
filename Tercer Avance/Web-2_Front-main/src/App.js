@@ -14,6 +14,7 @@ import Genero from "./pages/Genero/Genero.js";
 import EditarGenero from "./pages/Genero/EditarGenero.js";
 import EditarActor from "./pages/Actor/EditarActor.js";
 import EditarDirector from "./pages/Director/EditarDirector.js";
+import EditarMovie from "./pages/Movie/EditarMovie.js";
 import Movie from "./pages/Movie/Movie.js";
 import Profile from "./pages/Profile/Profile.js";
 import Error404 from "./components/Error404/Error.js";
@@ -28,6 +29,7 @@ import Reproductor from "./pages/Reproductor/Reproductor.js";
 
 import {AuthProvider} from './context/AuthProvider.js';
 import { DashboardProvider } from "./context/DashboardProvider.js";
+
 
 //? IMPORTACION DE COMPONENTES ?//
 // import Navbar from "./components/Navbar/Navbar";
@@ -63,6 +65,7 @@ function App() {
   <Route path="Director" element={<Director/>} />
   <Route path = "Director/:id" element = {<EditarDirector/>} />
   <Route path="Movie" element={<Movie/>} />
+  <Route path="Movie/:id" element={<EditarMovie/>} />
   <Route path="Profile" element={<Profile/>} />
   <Route path="Reportes" element={<Reportes/>} />
   {/* RUTAS PRIVADAS DEL USUARIO AUTENTICADO

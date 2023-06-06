@@ -27,7 +27,7 @@ const FormGenero = () => {
     useEffect(() => {
     if(params.id)
     {
-        console.log('Editando....')
+        
         setId(generoID._id)
         setNombre(generoID.nombre)
         setdescripcion(generoID.descripcion)

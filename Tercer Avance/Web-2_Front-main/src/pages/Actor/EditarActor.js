@@ -14,12 +14,11 @@ export default function EditarActor() {
 
 
   const params = useParams();
-  const {obtenerActorID, editarActor,actorID,eliminarproyecto,mostrarAlerta,alerta} = useDashboard();
+  const {obtenerActorID, editarActor,actorID,eliminarActor,mostrarAlerta,alerta} = useDashboard();
 
   useEffect(() => {
     if(params.id)
     {
-        console.log('Editando....')
         setId(actorID._id)
         setNombre(actorID.nombre)
         setApellido(actorID.apellido)
@@ -34,13 +33,9 @@ export default function EditarActor() {
      }, [params])
   
 
-  useEffect(() => {
-obtenerActorID(params.id);
-  }, [])
-
-
-
- 
+     useEffect(() => {
+      obtenerActorID(params.id);
+        }, [])
 
 
     
@@ -81,7 +76,7 @@ return
 const HandleClick = () =>{
 
 if(window.confirm('Deseas eliminar este actor/actriz?')){
-eliminarproyecto(params.id);
+eliminarActor(params.id);
 }else{
 console.log('No Eliminado')
 }

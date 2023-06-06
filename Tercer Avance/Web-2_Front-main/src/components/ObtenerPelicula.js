@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 const ObtenerPelicula = ({pelicula}) => {
     const {_id, titulo, sinopsis} = pelicula;
 
+    console.log(pelicula);
+
     return (
         <div className="divpeliculas">
 
@@ -25,4 +27,4 @@ const ObtenerPelicula = ({pelicula}) => {
     )
 }
 
-export default ObtenerDirector
+export default ObtenerPelicula
