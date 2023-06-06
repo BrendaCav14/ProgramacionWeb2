@@ -17,7 +17,7 @@ import carritoDetRoutes from './routers/carritoDetRouters.js';
 import ventaRoutes from './routers/ventaRouters.js';
 import ventaDetRoutes from './routers/ventaDetRouters.js';
 
-
+ 
 const app = express();
 
 app.use(express.json());
@@ -41,7 +41,7 @@ const corsOptions = {
 
         }
     }
-};
+}; 
 
 app.use(cors(corsOptions));
 

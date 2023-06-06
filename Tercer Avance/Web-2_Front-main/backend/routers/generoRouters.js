@@ -1,5 +1,5 @@
 import express from "express";
-import{obtenerGeneros,nuevoGenero,obtenerGenero,editarGenero,eliminarGenero} from "../controllers/generoController.js";
+import{obtenerGeneros,nuevoGenero,obtenerGenero,editarGenero,eliminarGenero,obtenerGenerostodos} from "../controllers/generoController.js";
 import checkAuth from "../middleware/checkAuth.js";
 
 const router = express.Router();
@@ -9,6 +9,9 @@ const router = express.Router();
 router.route("/")
 .get(checkAuth, obtenerGeneros)
 .post(checkAuth, nuevoGenero);
+router.route("/generostodos")
+.get(checkAuth, obtenerGenerostodos);
+
 
 router.route("/:id")
 .get(checkAuth,obtenerGenero)

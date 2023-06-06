@@ -6,6 +6,12 @@ const generos = await Genero.find().where('administrador').equals(req.usuario);
 res.json(generos);
 };
 
+const obtenerGenerostodos = async (req,res)=>{
+    const generos = await Genero.find();
+    
+    res.json(generos);
+    };
+
 const nuevoGenero = async (req,res)=>{
 
 const genero = new Genero(req.body);
@@ -91,4 +97,4 @@ const eliminarGenero = async (req,res)=>{
 
 };
 
-export{obtenerGeneros,nuevoGenero,obtenerGenero,editarGenero,eliminarGenero};
+export{obtenerGeneros,nuevoGenero,obtenerGenero,editarGenero,eliminarGenero, obtenerGenerostodos};

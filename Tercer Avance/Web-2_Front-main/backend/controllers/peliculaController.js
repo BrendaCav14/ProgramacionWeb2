@@ -41,6 +41,22 @@ const obtenerPelicula = async (req,res)=>{
     res.json(pelicula);
 
 };
+ 
+
+const obtenerPeliculasGenero = async (req,res)=>{
+    const { genero } = req.params;
+    const pelicula = await Pelicula.find({ Generos: genero });
+
+    if(!pelicula){
+        const error = new Error("No Encontrado");
+        return res.status(404).json({msg: error.message});
+    }
+
+    
+ 
+    res.json(pelicula);
+
+};
 
 const editarPelicula = async (req,res)=>{
     const { id } = req.params;
@@ -105,4 +121,4 @@ const eliminarPelicula = async (req,res)=>{
 
 };
 
-export{obtenerPeliculas,nuevoPelicula,obtenerPelicula,editarPelicula,eliminarPelicula};
+export{obtenerPeliculas,nuevoPelicula,obtenerPelicula,editarPelicula,eliminarPelicula, obtenerPeliculasGenero};

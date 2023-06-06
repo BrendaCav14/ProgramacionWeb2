@@ -634,7 +634,6 @@ const cerrarSesion = () => {
             obtenerPeliculaID,
             peliculasID,
             editarMovie,
-            
 
             tipoCuenta,
             
